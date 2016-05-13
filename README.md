@@ -21,7 +21,7 @@ Create a google document with the content you want to use. The first column is t
 
 ![Doc Screen](./docs/doc_screen.png)
 
-## 2. Create a text fields
+## 2. Create text field(s)
 
 Naming a text field with a name as `sync:[key]`, replacing `[key]` with the key used in the google document will cause it to be synchronized. Other text fields will be ignored.
 
@@ -52,7 +52,6 @@ The language/variation is each of the columns in the google document.
 ### 3.4 Voila!
 
 ![Run](./docs/result.png)
-
 
 
 ## References
