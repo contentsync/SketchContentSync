@@ -9,24 +9,35 @@ var onRun = function(context) {
   var selection = context.selection
   var selectionCount = [selection count]
 
-  showOptions();
-  loadFromURL(dict['syncSource']);
-
-  var layerCount = 0;
-  var pageCount = 0;
+  if(showOptions()){
+    var data = loadFromURL(dict['syncSource']);
+    if(data){
+      storeData(data);
+      if(ChooseLanguage()){
+        doc.showMessage('Updating text fields...');
+        updateTextBoxes();
+        doc.showMessage('Sync completed!');
+        doc.reloadInspector();
+      } else {
+        doc.showMessage('Content Sync Canceled.');
+      }
+    } else {
+      doc.showMessage('Unable to fetch data.');
+    }
+  } else {
+    doc.showMessage('Content Sync Canceled.');
+  }
 
   function updateTextBoxes(){
     var language = dict['syncLanguage'];
     for (var i = 0; i < doc.pages().count(); i++) {
       var page = doc.pages().objectAtIndex(i),
         layers = page.children();
-      pageCount++;
       // Loop through all children of the page
       for (var j = 0; j < layers.count(); j++) {
         var layer = layers.objectAtIndex(j);
         // Check if the layer is a text layer
         if(layer.class() == "MSTextLayer") {
-          layerCount++;
           var layerName = [layer name];
           var parts = layerName.split(':');
           if(parts.length == 2){
@@ -45,10 +56,15 @@ var onRun = function(context) {
   }
 
   function storeData(data){
+    log("Store data...");
+    log(data);
     var languages = [[NSMutableArray alloc] init];
     var firstEntry = true;
     for(var i = 0; i < data.length; i++){
       var row = data[i];
+      if(firstEntry){
+        log(row);
+      }
       var propkey = null;
       var value = {};
       for(var key in row) {
@@ -56,6 +72,7 @@ var onRun = function(context) {
           propkey = row[key];
         } else {
           if(firstEntry){
+            log("Adding Language: " + key);
             [languages addObject:key];
           }
           value[key] = row[key];
@@ -69,31 +86,27 @@ var onRun = function(context) {
 
   function loadFromURL(queryURL) {
     doc.showMessage('Sync starting...');
-    var data;
+    var data = null;
     if(queryURL.indexOf("google.com") > -1) {
       var sheetID=queryURL.substring(queryURL.lastIndexOf("/d/")+3,queryURL.lastIndexOf("/"));
-      for(var i = 1; true; i++) {
-        queryURL = "https://spreadsheets.google.com/feeds/list/" + sheetID + "/" + i + "/public/values?alt=json";
-        data = request(queryURL);
-        if(data == "Invalid query parameter value for grid_id.") {
-          break;
-        }
+      queryURL = "https://spreadsheets.google.com/feeds/list/" + sheetID + "/1/public/values?alt=json";
+      data = request(queryURL);
+      log(data);
+      try {
         data = JSON.parse(data);
-        storeData(data);
+        data = parseSheetsData(data);
+      } catch(e){
+        data = null;
       }
     } else {
       data = request(queryURL);
-      data = JSON.parse(data);
-      storeData(data);  
+      data = JSON.parse(data);  
     }
-    ChooseLanguage();
-    doc.showMessage('Updating text fields...');
-    updateTextBoxes();
-    doc.showMessage('Sync completed!');
-    doc.reloadInspector();
+    return data;
   }
 
   function request(queryURL) {
+    log("Requesting: " + queryURL);
     var request = NSMutableURLRequest.new();
     [request setHTTPMethod:@"GET"];
     [request setURL:[NSURL URLWithString:queryURL]];
@@ -102,6 +115,26 @@ var onRun = function(context) {
     var oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:responseCode error:error];
     var dataString = [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
     return dataString;
+  }
+
+  function parseSheetsData(data) {
+    var result = [];
+    var items = data.feed.entry;
+    for(var i=0; i<items.length; i++) {
+      var item = items[i];
+      log(item);
+      var resultItem = {}
+      for(var key in item) {
+        var attr = key.split('gsx$')[1];
+        log("Key: " + key);
+        if(!attr) { continue; }
+        attr = capitalize(attr);
+        resultItem[attr] = item[key]['$t'];
+      }
+      log(resultItem);
+      result.push(resultItem);
+    }
+    return result;
   }
 
   function showOptions() {
@@ -117,6 +150,7 @@ var onRun = function(context) {
     var button = alert.runModal();
     input.validateEditing();
     dict['syncSource'] = input.stringValue();
+    return button;
   }
 
   function ChooseLanguage(){
@@ -134,7 +168,13 @@ var onRun = function(context) {
     input.setStringValue(dict['syncLanguage'] || languages[0]);
     alert.setAccessoryView(input);
     var button = alert.runModal();
+    log("Button: " + button);
     input.validateEditing();
     dict['syncLanguage'] = input.stringValue();
+    return button;
+  }
+
+  function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 }
