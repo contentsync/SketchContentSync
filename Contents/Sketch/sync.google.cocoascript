@@ -1,0 +1,140 @@
+var onRun = function(context) {
+  var doc = context.document;
+  var dict = NSThread.mainThread().threadDictionary();
+  var keyDataDict = NSThread.mainThread().threadDictionary();
+
+  var page = [doc currentPage];
+  var artboards = [doc artboards];
+
+  var selection = context.selection
+  var selectionCount = [selection count]
+
+  showOptions();
+  loadFromURL(dict['syncSource']);
+
+  var layerCount = 0;
+  var pageCount = 0;
+
+  function updateTextBoxes(){
+    var language = dict['syncLanguage'];
+    for (var i = 0; i < doc.pages().count(); i++) {
+      var page = doc.pages().objectAtIndex(i),
+        layers = page.children();
+      pageCount++;
+      // Loop through all children of the page
+      for (var j = 0; j < layers.count(); j++) {
+        var layer = layers.objectAtIndex(j);
+        // Check if the layer is a text layer
+        if(layer.class() == "MSTextLayer") {
+          layerCount++;
+          var layerName = [layer name];
+          var parts = layerName.split(':');
+          if(parts.length == 2){
+            var syncPart = parts[0];
+            var namePart = parts[1];
+            if(syncPart == "sync"){
+              if(keyDataDict[namePart]){
+                var value = keyDataDict[namePart][language];
+                layer.stringValue = value;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  function storeData(data){
+    var languages = [[NSMutableArray alloc] init];
+    var firstEntry = true;
+    for(var i = 0; i < data.length; i++){
+      var row = data[i];
+      var propkey = null;
+      var value = {};
+      for(var key in row) {
+        if(propkey == null){
+          propkey = row[key];
+        } else {
+          if(firstEntry){
+            [languages addObject:key];
+          }
+          value[key] = row[key];
+        }
+      }
+      firstEntry = false;
+      keyDataDict[propkey] = value;
+    }
+    dict['syncLanguages'] = languages;
+  }
+
+  function loadFromURL(queryURL) {
+    doc.showMessage('Sync starting...');
+    var data;
+    if(queryURL.indexOf("google.com") > -1) {
+      var sheetID=queryURL.substring(queryURL.lastIndexOf("/d/")+3,queryURL.lastIndexOf("/"));
+      for(var i = 1; true; i++) {
+        queryURL = "https://spreadsheets.google.com/feeds/list/" + sheetID + "/" + i + "/public/values?alt=json";
+        data = request(queryURL);
+        if(data == "Invalid query parameter value for grid_id.") {
+          break;
+        }
+        data = JSON.parse(data);
+        storeData(data);
+      }
+    } else {
+      data = request(queryURL);
+      data = JSON.parse(data);
+      storeData(data);  
+    }
+    ChooseLanguage();
+    doc.showMessage('Updating text fields...');
+    updateTextBoxes();
+    doc.showMessage('Sync completed!');
+    doc.reloadInspector();
+  }
+
+  function request(queryURL) {
+    var request = NSMutableURLRequest.new();
+    [request setHTTPMethod:@"GET"];
+    [request setURL:[NSURL URLWithString:queryURL]];
+    var error = NSError.new();
+    var responseCode = null;
+    var oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:responseCode error:error];
+    var dataString = [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
+    return dataString;
+  }
+
+  function showOptions() {
+    var alert = [NSAlert alertWithMessageText: "Sync Google Document Text"
+                                   defaultButton:"Sync"
+                                 alternateButton:"Cancel"
+                                     otherButton:nil
+                       informativeTextWithFormat:"Enter the URL where your text lives."];
+
+    var input = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 54)];
+    input.setStringValue(dict['syncSource'] || "https://docs.google.com/spreadsheets/...");
+    alert.setAccessoryView(input);
+    var button = alert.runModal();
+    input.validateEditing();
+    dict['syncSource'] = input.stringValue();
+  }
+
+  function ChooseLanguage(){
+    var languages = dict['syncLanguages'];
+    var alert = [NSAlert alertWithMessageText: "Sync language"
+                                   defaultButton:"Sync"
+                                 alternateButton:"Cancel"
+                                     otherButton:nil
+                       informativeTextWithFormat:"Select which language to translate to."];
+
+    var input = [[NSComboBox alloc] initWithFrame:NSMakeRect(0, 0, 300, 54)];
+    for(var i = 0; i < [languages count]; ++i){
+      [input addItemWithObjectValue:languages[i]];
+    }
+    input.setStringValue(dict['syncLanguage'] || languages[0]);
+    alert.setAccessoryView(input);
+    var button = alert.runModal();
+    input.validateEditing();
+    dict['syncLanguage'] = input.stringValue();
+  }
+}

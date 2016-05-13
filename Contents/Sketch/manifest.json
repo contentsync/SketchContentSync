@@ -1,0 +1,22 @@
+{
+  "name": "SketchContentSync",
+  "author" : "David Brody",
+  "commands" : [
+    {
+      "script" : "sync.google.cocoascript",
+      "handler" : "onRun",
+      "shortcut" : "option s",
+      "name" : "Google Sync",
+      "identifier" : "google_contentsync"
+    },
+  ],
+  "menu": {
+    "items": [
+      "google_contentsync",
+    ],
+  },
+  "identifier" : "com.github.dbrody.sketchcontentsync",
+  "version" : "0.1",
+  "description" : "Sync google doc content",
+  "authorEmail" : "dbrody@gmail.com"
+}
