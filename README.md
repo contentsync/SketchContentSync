@@ -1,3 +1,5 @@
+[![GitHub version](https://badge.fury.io/gh/ideo%2FSketchContentSync.sketchplugin.svg)](https://badge.fury.io/gh/ideo%2FSketchContentSync.sketchplugin)
+
 # Sketch Content Sync
 
 Dynamically update content within sketch files.
