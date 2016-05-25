@@ -4,15 +4,51 @@
 
 Dynamically update content within sketch files.
 
-Current support:
+Currently support:
 
-+ Google Spreadsheets
++ [Google Spreadsheets](https://docs.google.com)
++ [Sheetsu](https://sheetsu.com)
+
+# Features
+
+### Content Synchronizing
+
+![Content Synchronizing](./docs/feature_syncvar.png)
+
+Naming any text element with the format `sync:<key>` will synchronize its content. The content will be from the spreadsheet row where the first cell's content matches `<key>`.
+
+### Content Localizing
+
+![Content Localizing](./docs/feature_contentversion.png)
+
+Each row may have many columns. Before each sync you may select which column to populate content from. This supports having different versions or localizations of your content.
+
+### Content Concatenating
+
+![Content Concatenating](./docs/feature_concat.png)
+
+A synchronized element's content can also be based on concatenating multiple `<key>`'s or constants. For example, you may use `sync:<key1> + <key2>` to generate content which is `<key1 value><key2 value>`. Furthermore you may concatente strings as well using `sync:<key1> + ' and ' + <key2>` which will result in the content `<key1 value> and <key2 value>`.
 
 # How to Install It
 
 + Download the Zip File
 + Double click on the .sketchplugin file
 + Available in Sketch under `Plugins` > `SketchContentSync`
+
+
+# Quick Example
+
++ Download and open [this sketch file](./examples/simpleexample.sketch)
++ Run **SketchContentSync > Google Sync** under the **Plugins** menu
++ **Sync Google Document Text** Popup
+  + Paste this URL in the URL popup: `https://docs.google.com/spreadsheets/d/1xkkFbXdCEC2Rr_rxO74jdZ30SZSxBuzLdNPFlhsjPws/`
+  + Press `Sync`
++ **Sync Content Version** Popup
+  + Use default and press `Sync`
++ Voila! The content in the Sketch should have updated.
++ Notice there are some spelling errors in the synced content. Try syncing again with another version or even another language.
+
+[You can see the sample spreadsheet used for this example here.](https://docs.google.com/spreadsheets/d/1xkkFbXdCEC2Rr_rxO74jdZ30SZSxBuzLdNPFlhsjPws/edit?usp=sharing)
 
 
 # How to use it

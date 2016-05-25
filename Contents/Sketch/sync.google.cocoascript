@@ -1,4 +1,5 @@
 var onRun = function(context) {
+  var app = NSApplication.sharedApplication()
   var doc = context.document;
   var dict = NSThread.mainThread().threadDictionary();
   var keyDataDict = NSThread.mainThread().threadDictionary();
@@ -29,6 +30,8 @@ var onRun = function(context) {
   }
 
   function updateTextBoxes(){
+    var message = 'Sync completed however the following errors occurred:\n'
+    var invalidKey = false;
     var language = dict['syncLanguage'];
     for (var i = 0; i < doc.pages().count(); i++) {
       var page = doc.pages().objectAtIndex(i),
@@ -44,27 +47,43 @@ var onRun = function(context) {
             var syncPart = parts[0];
             var namePart = parts[1];
             if(syncPart == "sync"){
-              if(keyDataDict[namePart]){
-                var value = keyDataDict[namePart][language];
-                layer.stringValue = value;
+              var newValue = '';
+
+              // Now support `key+'constant'+key` concatenation
+              var keyParts = namePart.split('+');
+              for(var k = 0; k < keyParts.length; k++){
+                var keyValue = keyParts[k].replace(/^\s+|\s+$/g, '');
+                if(keyValue[0] == '\'' && keyValue[keyValue.length-1] == '\''){
+                  newValue += keyValue.substring(1, keyValue.length-1);
+                } else if(keyDataDict[keyValue]){
+                  var value = keyDataDict[keyValue][language];
+                  newValue += value;
+                } else {
+                  invalidKey = true;
+                  message += '\nInvalid Key: ' + keyValue + ' used in \'' + layerName + '\'';
+                }
+              }
+
+              // Only update if new text is not blank
+              if(newValue.length > 0){
+                layer.stringValue = newValue;
               }
             }
           }
         }
       }
     }
+    if(invalidKey){
+      app.displayDialog_withTitle(message, "Invalid Key(s) Found");
+    }
+    return message;
   }
 
   function storeData(data){
-    log("Store data...");
-    log(data);
     var languages = [[NSMutableArray alloc] init];
     var firstEntry = true;
     for(var i = 0; i < data.length; i++){
       var row = data[i];
-      if(firstEntry){
-        log(row);
-      }
       var propkey = null;
       var value = {};
       for(var key in row) {
@@ -72,7 +91,6 @@ var onRun = function(context) {
           propkey = row[key];
         } else {
           if(firstEntry){
-            log("Adding Language: " + key);
             [languages addObject:key];
           }
           value[key] = row[key];
@@ -91,7 +109,6 @@ var onRun = function(context) {
       var sheetID=queryURL.substring(queryURL.lastIndexOf("/d/")+3,queryURL.lastIndexOf("/"));
       queryURL = "https://spreadsheets.google.com/feeds/list/" + sheetID + "/1/public/values?alt=json";
       data = request(queryURL);
-      log(data);
       try {
         data = JSON.parse(data);
         data = parseSheetsData(data);
@@ -106,7 +123,6 @@ var onRun = function(context) {
   }
 
   function request(queryURL) {
-    log("Requesting: " + queryURL);
     var request = NSMutableURLRequest.new();
     [request setHTTPMethod:@"GET"];
     [request setURL:[NSURL URLWithString:queryURL]];
@@ -122,16 +138,13 @@ var onRun = function(context) {
     var items = data.feed.entry;
     for(var i=0; i<items.length; i++) {
       var item = items[i];
-      log(item);
       var resultItem = {}
       for(var key in item) {
         var attr = key.split('gsx$')[1];
-        log("Key: " + key);
         if(!attr) { continue; }
         attr = capitalize(attr);
         resultItem[attr] = item[key]['$t'];
       }
-      log(resultItem);
       result.push(resultItem);
     }
     return result;
@@ -155,11 +168,11 @@ var onRun = function(context) {
 
   function ChooseLanguage(){
     var languages = dict['syncLanguages'];
-    var alert = [NSAlert alertWithMessageText: "Sync language"
+    var alert = [NSAlert alertWithMessageText: "Sync Content Version"
                                    defaultButton:"Sync"
                                  alternateButton:"Cancel"
                                      otherButton:nil
-                       informativeTextWithFormat:"Select which language to translate to."];
+                       informativeTextWithFormat:"Select which content version to use:"];
 
     var input = [[NSComboBox alloc] initWithFrame:NSMakeRect(0, 0, 300, 54)];
     for(var i = 0; i < [languages count]; ++i){
@@ -168,7 +181,6 @@ var onRun = function(context) {
     input.setStringValue(dict['syncLanguage'] || languages[0]);
     alert.setAccessoryView(input);
     var button = alert.runModal();
-    log("Button: " + button);
     input.validateEditing();
     dict['syncLanguage'] = input.stringValue();
     return button;
