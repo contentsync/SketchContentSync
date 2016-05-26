@@ -66,6 +66,7 @@ var onRun = function(context) {
 
               // Only update if new text is not blank
               if(newValue.length > 0){
+                newValue = newValue.replace(/\\n/g, '\n');
                 layer.stringValue = newValue;
               }
             }

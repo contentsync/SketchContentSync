@@ -29,6 +29,8 @@ Each row may have many columns. Before each sync you may select which column to 
 
 A synchronized element's content can also be based on concatenating multiple `<key>`'s or constants. For example, you may use `sync:<key1> + <key2>` to generate content which is `<key1 value><key2 value>`. Furthermore you may concatente strings as well using `sync:<key1> + ' and ' + <key2>` which will result in the content `<key1 value> and <key2 value>`.
 
+To add new lines between items, use `'\n'` for example `sync:<key1> + '\n' + <key2>`.
+
 # How to Install It
 
 + Download the Zip File
