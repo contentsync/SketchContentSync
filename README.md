@@ -2,6 +2,8 @@
 
 # Sketch Content Sync
 
+Visit [www.contentsync.io](http://contentsync.io/).
+
 Dynamically update content within sketch files.
 
 Currently support:
