@@ -11,6 +11,11 @@ Currently support:
 + [Google Spreadsheets](https://docs.google.com)
 + [Sheetsu](https://sheetsu.com)
 
+# Installation
+
++ Download the [zip file](https://github.com/ideo/SketchContentSync.sketchplugin/releases/download/v0.2.1/SketchContentSync.sketchplugin.zip) and then rename it to `SketchContentSync.sketchplugin`.
++ Double click on the `SketchContentSync.sketchplugin` to install it into Sketch.
+
 # Features
 
 ### Content Synchronizing
