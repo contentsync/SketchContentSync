@@ -13,7 +13,9 @@ Currently support:
 
 # Installation
 
-+ Download the [zip file](https://github.com/ideo/SketchContentSync.sketchplugin/releases/download/v0.2.1/SketchContentSync.sketchplugin.zip) and then rename it to `SketchContentSync.sketchplugin`.
++ Download the [zip file](https://github.com/ideo/SketchContentSync.sketchplugin/releases/download/v0.2.1/SketchContentSync.sketchplugin.zip)
++ Unzip the zip file
++ Make sure the name of the file is `SketchContentSync.sketchplugin`.
 + Double click on the `SketchContentSync.sketchplugin` to install it into Sketch.
 
 # Features
