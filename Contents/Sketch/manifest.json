@@ -16,7 +16,7 @@
     ],
   },
   "identifier" : "com.github.dbrody.sketchcontentsync",
-  "version" : "0.2.1",
+  "version" : "0.3.1",
   "description" : "Sync google doc content",
   "authorEmail" : "dbrody@gmail.com"
 }
