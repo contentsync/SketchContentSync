@@ -40,7 +40,7 @@ A synchronized element's content can also be based on concatenating multiple `<k
 
 To add new lines between items, use `'\n'` for example `sync:<key1> + '\n' + <key2>`.
 
-## Content wildcards
+### Content wildcards
 
 A synchronized element's content can be chosen by pattern. For example
 if you have `<keys>` like `article1title` and `article2title`. You can
