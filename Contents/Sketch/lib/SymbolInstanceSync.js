@@ -85,7 +85,8 @@ var SymbolInstanceSync = function(layer)
         }
       }
     }
-    _layer.applyOverrides(mutableValues);
+    // Only overwrite if no errors
+    _layer.overrides = mutableValues;
   };
     
 
