@@ -3,8 +3,13 @@ TextLayerSync
 --------------------
 
 Class used to synchronize a Text Layer with the key/value map.
-
 */
+
+
+function randomArrayItem(arr) {
+  return arr[Math.floor(Math.random()*arr.length)];
+}
+
 var TextLayerSync = function(layer)
 {
   var _layer = layer;
@@ -29,6 +34,19 @@ var TextLayerSync = function(layer)
 
     var layerName = _layer.name();
     var parts = layerName.split(':');
+
+    function wildcardMatch(key, store, language) {
+      var rex = new RegExp(key.replace('*', '.*'), 'i');
+      var candidateKeys = Object.keys(store);
+      var matchedKeys = candidateKeys.filter(function(key) {
+        return rex.test(key);
+      });
+      if (matchedKeys.length != 0) {
+        var randomMatchedKey = randomArrayItem(matchedKeys)
+        return store[randomMatchedKey][language];
+      }
+    }
+
     if(parts.length == 2){
       var syncPart = parts[0];
       var namePart = parts[1];
@@ -44,11 +62,15 @@ var TextLayerSync = function(layer)
           } else if(this.dataStore[keyValue]){
             var value = this.dataStore[keyValue][this.language];
             newValue += value;
+          } else if (wildcardMatch(keyValue, this.dataStore, this.language)) {
+            var randomMatchedValue = wildcardMatch(keyValue, this.dataStore, this.language);
+            newValue += randomMatchedValue;
+            _message += '\nUsed wildcard ' + randomMatchedValue;
           } else {
             invalidKey = true;
             if(!this.hasMessage()){
               _message = "";
-            } 
+            }
             _message += '\nInvalid Key: ' + keyValue + ' used in \'' + layerName + '\'';
           }
         }

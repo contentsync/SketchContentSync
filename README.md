@@ -40,6 +40,12 @@ A synchronized element's content can also be based on concatenating multiple `<k
 
 To add new lines between items, use `'\n'` for example `sync:<key1> + '\n' + <key2>`.
 
+## Content wildcards
+
+A synchronized element's content can be chosen by pattern. For example
+if you have `<keys>` like `article1title` and `article2title`. You can
+select randomly between these by using `sync:article*title`. 
+
 ### Symbol Content Overriding
 
 Customize text per symbol instance. Naming a text element `sync:<key>` within a Symbol definition then naming the used symbol, you can then use the content key `<key>[<symbolname>]` within the spreadsheet to set the content for the text within that specific symbol instance.
