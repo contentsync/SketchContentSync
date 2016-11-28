@@ -45,6 +45,7 @@ var TextLayerSync = function(layer)
         var randomMatchedKey = randomArrayItem(matchedKeys)
         return store[randomMatchedKey][language];
       }
+      return null;
     }
 
     if(parts.length == 2){
