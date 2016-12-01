@@ -3,7 +3,7 @@
   "author" : "David Brody",
   "commands" : [
     {
-      "script" : "sync.google.cocoascript",
+      "script" : "contentsync.google.js",
       "handler" : "onRun",
       "shortcut" : "option s",
       "name" : "Google Sync",
@@ -16,7 +16,7 @@
     ],
   },
   "identifier" : "com.github.dbrody.sketchcontentsync",
-  "version" : "0.3.3",
+  "version" : "0.3.6",
   "description" : "Sync google doc content",
   "authorEmail" : "dbrody@gmail.com"
 }
