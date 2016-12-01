@@ -24,8 +24,8 @@ var TextLayerSync = function(layer)
   };
 
   this.sync = function(syncMetaData) {
-    this.dataStore = syncMetaData['sync']['synckeys'];
     this.language = syncMetaData['sync']['connection']['syncLanguage'];
+    this.dataStore = syncMetaData['sync']['synckeys'][this.language];
 
     // Dont overwrite text content if text layer belongs to SymbolMaster
     if(this.isInSymbol(syncMetaData)){
@@ -43,7 +43,7 @@ var TextLayerSync = function(layer)
       });
       if (matchedKeys.length != 0) {
         var randomMatchedKey = randomArrayItem(matchedKeys)
-        return store[randomMatchedKey][language];
+        return store[randomMatchedKey];
       }
       return null;
     }
@@ -61,7 +61,7 @@ var TextLayerSync = function(layer)
           if(keyValue[0] == '\'' && keyValue[keyValue.length-1] == '\''){
             newValue += keyValue.substring(1, keyValue.length-1);
           } else if(this.dataStore[keyValue]){
-            var value = this.dataStore[keyValue][this.language];
+            var value = this.dataStore[keyValue];
             newValue += value;
           } else if (wildcardMatch(keyValue, this.dataStore, this.language)) {
             var randomMatchedValue = wildcardMatch(keyValue, this.dataStore, this.language);

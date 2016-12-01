@@ -50,8 +50,8 @@ var SymbolInstanceSync = function(layer)
   }
 
   this.sync = function(syncMetaData) {
-    this.dataStore = syncMetaData['sync']['synckeys'];
     this.language = syncMetaData['sync']['connection']['syncLanguage'];
+    this.dataStore = syncMetaData['sync']['synckeys'][this.language];
     this.masterSymbolMap = syncMetaData['sync']['symbolmap'];
 
     var masterSymbol = this.masterSymbolMap[_layer.symbolID()];
@@ -91,8 +91,8 @@ var SymbolInstanceSync = function(layer)
     
 
   this.parseValueForLayer = function(layer){
-    var layerName = layer.name();
-    var parts = layerName.split(':');
+    this._layerName = layer.name();
+    var parts = this._layerName.split(':');
     if(parts.length == 2){
       var syncPart = parts[0];
       var namePart = parts[1];
@@ -137,7 +137,7 @@ var SymbolInstanceSync = function(layer)
   // Handles static strings: sync:googledockey
   this.parsePartDictLookup = function(partKey){
     if(this.dataStore[partKey]){
-      return this.dataStore[partKey][this.language];
+      return this.dataStore[partKey];
     }
     return null;
   };
@@ -147,7 +147,7 @@ var SymbolInstanceSync = function(layer)
     if(!this.hasMessage()){
       _message = "";
     } 
-    _message += '\nInvalid Key: ' + keyValue + ' used in \'' + layerName + '\'';
+    _message += '\nInvalid Key: ' + partKey + ' used in \'' + this._layerName + '\'';
     return "";
   };
 };
