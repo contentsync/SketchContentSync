@@ -13,7 +13,7 @@ var TextLayerUpdater = function(doc){
 
   this._doc = doc;
 
-  this.update = function(syncMetaData, versionData){
+  this.update = function(stateStore){
     var message = 'Sync completed however the following errors occurred:\n'
     var invalidKey = false;
     for (var i = 0; i < doc.pages().count(); i++) {
@@ -30,7 +30,7 @@ var TextLayerUpdater = function(doc){
           layersync = new SymbolInstanceSync(layer);
         }
         if(layersync){
-          layersync.sync(syncMetaData, versionData);
+          layersync.sync(stateStore);
         }
       }
     }

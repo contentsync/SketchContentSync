@@ -1,5 +1,6 @@
 @import './helpers/GoogleSyncHelpers.js';
 
+@import './lib/ContentSyncStateStore.js';
 @import './lib/TextLayerUpdater.js';
 @import './lib/MasterSymbolMapper.js';
 
@@ -8,24 +9,13 @@ var onRun = function(context) {
   var doc = context.document;
 
   // Store for Sync Plugin Data
-  var syncMetaData = NSThread.mainThread().threadDictionary();
-  if(!syncMetaData['sync']){
-    syncMetaData['sync'] = [[NSMutableDictionary alloc] init];
-  }
-
-  // Metadata for connection settings
-  if(!syncMetaData['sync']['connection']){
-    syncMetaData['sync']['connection'] = [[NSMutableDictionary alloc] init];
-  }
-
-  // Stored Content Syncs from remote file
-  syncMetaData['sync']['synckeys'] = [[NSMutableDictionary alloc] init];
+  var stateStore = new ContentSyncStateStore();
 
   // MasterSymbol mapping for symbol handling
-  syncMetaData['sync']['symbolmap'] = (new MasterSymbolMapper()).generate(doc).map()
+  stateStore.set('symbolmap', (new MasterSymbolMapper()).generate(doc).map());
 
   // Get public spreadsheet URL
-  var previous_url = syncMetaData['sync']['connection']['syncSource'];
+  var previous_url = stateStore.retrieve('contentsync.google.url');
   var new_url = GoogleSyncHelpers.promptForUrl(previous_url);
   if(!new_url){
     doc.showMessage('Content Sync Canceled.');
@@ -33,11 +23,11 @@ var onRun = function(context) {
   }
 
   // Save URL for next time
-  syncMetaData['sync']['connection']['syncSource'] = new_url;
+  stateStore.store('contentsync.google.url', new_url);
 
   // Load data from URL
   doc.showMessage('Sync starting...');
-  var data = GoogleSyncHelpers.loadFromURL(syncMetaData['sync']['connection']['syncSource']);
+  var data = GoogleSyncHelpers.loadFromURL(new_url);
   if(!data){
     doc.showMessage('Unable to fetch data.');
     return;
@@ -45,26 +35,23 @@ var onRun = function(context) {
 
   // Map data to version map
   var datamap = GoogleSyncHelpers.makeDataMap(data);
-  syncMetaData['sync']['synckeys'] = datamap;
+  stateStore.set('synckeys', datamap);
 
-  // Prompt for choosing language
+  // Prompt for choosing version
   var versions = GoogleSyncHelpers.makeVersionList(data);
-  var previouslyChosen = syncMetaData['sync']['connection']['syncLanguage'];
-  var chosenLanguage = GoogleSyncHelpers.ChooseLanguage(versions, previouslyChosen);
-  if(!chosenLanguage){
+  var previouslyChosen = stateStore.version();
+  var chosen_version = GoogleSyncHelpers.ChooseVersion(versions, previouslyChosen);
+  if(!chosen_version){
     doc.showMessage('Content Sync Canceled.');
     return;
   }
 
-  // Store Chosen Language for next go
-  syncMetaData['sync']['connection']['syncLanguage'] = chosenLanguage;
-
-  var version = syncMetaData['sync']['connection']['syncLanguage'];
-  var versionData = syncMetaData['sync']['synckeys'][version];
+  // Store chosen version for next go
+  stateStore.version(chosen_version);
 
   doc.showMessage('Updating text fields...');
   var textUpdater = new TextLayerUpdater(doc)
-  textUpdater.update(syncMetaData, versionData);
+  textUpdater.update(stateStore);
   delete textUpdater;
   doc.showMessage('Sync completed!');
 

@@ -49,10 +49,9 @@ var SymbolInstanceSync = function(layer)
     return _message;
   }
 
-  this.sync = function(syncMetaData) {
-    this.language = syncMetaData['sync']['connection']['syncLanguage'];
-    this.dataStore = syncMetaData['sync']['synckeys'][this.language];
-    this.masterSymbolMap = syncMetaData['sync']['symbolmap'];
+  this.sync = function(stateStore) {
+    this.dataStore = stateStore.data_version();
+    this.masterSymbolMap = stateStore.get('symbolmap');
 
     var masterSymbol = this.masterSymbolMap[_layer.symbolID()];
 

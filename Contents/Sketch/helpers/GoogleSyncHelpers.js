@@ -8,7 +8,11 @@ This is useful for public google documents.
 
 var GoogleSyncHelpers = {};
 
-GoogleSyncHelpers.makeDataMap = function(data, syncMetaData){
+
+// GoogleSyncHelpers.makeDataMap
+// ----------------------------------
+// Returns a map of data of form { version: { key: value }}
+GoogleSyncHelpers.makeDataMap = function(data){
   var datamap = [[NSMutableDictionary alloc] init];
   for(var i = 0; i < data.length; i++){
     var row = data[i];
@@ -27,20 +31,28 @@ GoogleSyncHelpers.makeDataMap = function(data, syncMetaData){
   return datamap;
 };
 
+
+// GoogleSyncHelpers.makeVersionList
+// ----------------------------------
+// Returns list of versions from the data
 GoogleSyncHelpers.makeVersionList = function(data){
-  var languages = [[NSMutableArray alloc] init];
+  var versions = [[NSMutableArray alloc] init];
   var versionRow = data[0];
   var propkey = null;
   for(var key in versionRow) {
     if(propkey == null){
       propkey = versionRow[key];
     } else {
-      [languages addObject:key];
+      [versions addObject:key];
     }
   }
-  return languages;
+  return versions;
 };
 
+
+// GoogleSyncHelpers.promptForUrl
+// ----------------------------------
+// Prompt user from a public URL to retreive data fromß
 GoogleSyncHelpers.promptForUrl = function(previous_source) {
   var alert = [NSAlert alertWithMessageText: "Sync Google Document Text"
                                  defaultButton:"Sync"
@@ -61,6 +73,10 @@ GoogleSyncHelpers.promptForUrl = function(previous_source) {
   return null;
 };
 
+
+// GoogleSyncHelpers.loadFromURL
+// ----------------------------------
+// Load data from a public URL
 GoogleSyncHelpers.loadFromURL = function(queryURL) {
   var data = null;
   if(queryURL.indexOf("google.com") > -1) {
@@ -80,7 +96,11 @@ GoogleSyncHelpers.loadFromURL = function(queryURL) {
   return data;
 };
 
-GoogleSyncHelpers.ChooseLanguage = function(languages, language_chosen){
+
+// GoogleSyncHelpers.ChooseVersion
+// ----------------------------------
+// Prompt user to choose from a list of versions
+GoogleSyncHelpers.ChooseVersion = function(versions, version_chosen){
   var alert = [NSAlert alertWithMessageText: "Sync Content Version"
                                  defaultButton:"Sync"
                                alternateButton:"Cancel"
@@ -88,21 +108,23 @@ GoogleSyncHelpers.ChooseLanguage = function(languages, language_chosen){
                      informativeTextWithFormat:"Select which content version to use:"];
 
   var input = [[NSComboBox alloc] initWithFrame:NSMakeRect(0, 0, 300, 54)];
-  for(var i = 0; i < [languages count]; ++i){
-    [input addItemWithObjectValue:languages[i]];
+  for(var i = 0; i < [versions count]; ++i){
+    [input addItemWithObjectValue:versions[i]];
   }
-  input.setStringValue(language_chosen || languages[0]);
+  input.setStringValue(version_chosen || versions[0]);
   alert.setAccessoryView(input);
   var button = alert.runModal();
   input.validateEditing();
-
   if(button){
     return input.stringValue();
   }
   return null;
 };
 
-//
+
+// GoogleSyncHelpers.request
+// ----------------------------------
+// Request and return data from a URL
 GoogleSyncHelpers.request = function(queryURL) {
   var request = NSMutableURLRequest.new();
   [request setHTTPMethod:@"GET"];
@@ -114,6 +136,11 @@ GoogleSyncHelpers.request = function(queryURL) {
   return dataString;
 };
 
+
+// GoogleSyncHelpers.parseSheetsData
+// ----------------------------------
+// Take the data from a spreadsheet and parse it into
+// map of { version: { key: value } }
 GoogleSyncHelpers.parseSheetsData = function(data) {
   var result = [];
   var items = data.feed.entry;
@@ -132,6 +159,7 @@ GoogleSyncHelpers.parseSheetsData = function(data) {
 };
 
 
+// Capitalize first letter of string
 function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };

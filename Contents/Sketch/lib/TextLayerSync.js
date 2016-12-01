@@ -23,19 +23,18 @@ var TextLayerSync = function(layer)
     return _message;
   };
 
-  this.sync = function(syncMetaData) {
-    this.language = syncMetaData['sync']['connection']['syncLanguage'];
-    this.dataStore = syncMetaData['sync']['synckeys'][this.language];
+  this.sync = function(stateStore) {
+    this.dataStore = stateStore.data_version();
 
     // Dont overwrite text content if text layer belongs to SymbolMaster
-    if(this.isInSymbol(syncMetaData)){
+    if(this.isInSymbol(stateStore)){
       return;
     }
 
     var layerName = _layer.name();
     var parts = layerName.split(':');
 
-    function wildcardMatch(key, store, language) {
+    function wildcardMatch(key, store) {
       var rex = new RegExp(key.replace('*', '.*'), 'i');
       var candidateKeys = Object.keys(store);
       var matchedKeys = candidateKeys.filter(function(key) {
@@ -63,8 +62,8 @@ var TextLayerSync = function(layer)
           } else if(this.dataStore[keyValue]){
             var value = this.dataStore[keyValue];
             newValue += value;
-          } else if (wildcardMatch(keyValue, this.dataStore, this.language)) {
-            var randomMatchedValue = wildcardMatch(keyValue, this.dataStore, this.language);
+          } else if (wildcardMatch(keyValue, this.dataStore)) {
+            var randomMatchedValue = wildcardMatch(keyValue, this.dataStore);
             newValue += randomMatchedValue;
             _message += '\nUsed wildcard ' + randomMatchedValue;
           } else {
@@ -87,9 +86,10 @@ var TextLayerSync = function(layer)
 
 
   // Returns true if _layer is found as belonging to a SymbolMaster
-  this.isInSymbol = function(syncMetaData){
-    for(var symbolID in syncMetaData['sync']['symbolmap']){
-      var symbol = syncMetaData['sync']['symbolmap'][symbolID];
+  this.isInSymbol = function(stateStore){
+    var symboldmap = stateStore.get('symbolmap');
+    for(var symbolID in symboldmap){
+      var symbol = symboldmap[symbolID];
       for(var i = 0; i < symbol['textlayers'].count(); i++){
         var textlayer = symbol['textlayers'].objectAtIndex(i);
         if(textlayer.objectID() == _layer.objectID()){
