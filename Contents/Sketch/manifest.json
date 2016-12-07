@@ -28,8 +28,8 @@
       "platform_contentsync"
     ],
   },
-  "identifier" : "com.github.dbrody.sketchcontentsync",
-  "version" : "0.4.0",
+  "identifier" : "com.github.contentsync.sketchcontentsync",
+  "version" : "0.4.1",
   "description" : "Sync google doc content",
-  "authorEmail" : "dbrody@gmail.com"
+  "authorEmail" : "support@contentsync.io"
 }
