@@ -4,20 +4,24 @@ var kPluginName = "ContentSync",
   kPluginDomain = "com.syncify.ContentSync"
 
 var MacOSAppCommunicator = function(context){
-
-  this.context = context;
+  var self = this;
+  self.context = context;
 
   // List of paths where the ContentSync.app may be
   // Multiple items is useful for development.
-  this.appPaths = [
+  self.appPaths = [
     "~/Library/Developer/Xcode/DerivedData/ContentSync-aczvmrxkkrbszrftgltjcizttdxl/Build/Products/Debug/ContentSync.app",
     "/Applications/ContentSync.app"
   ];
 
-  this.sendJSONCommands = function(params) {
-    var sketchFilePath = this.context.document.fileURL().path();
+  self.sendJSONCommands = function(params) {
+    if(!self.context.document || !self.context.document.fileURL()){
+      Utils.showDialog("Could not launch plugin. Please save this file first.")
+      return;
+    };
+    var sketchFilePath = self.context.document.fileURL().path();
     var
-      sp = this.context.scriptPath,
+      sp = self.context.scriptPath,
       uniqueID = [[NSUUID UUID] UUIDString],
       tempFolderPath = Utils.getTempFolderPath("temp-commands/"+uniqueID),
       jsonPath = sketchFilePath + ".contentsync",
@@ -40,8 +44,8 @@ var MacOSAppCommunicator = function(context){
     Utils.writeTextToFile(jsonString, jsonPath)
 
     // Try each path until one succeeds
-    for(var i = 0; i < this.appPaths.length; i++){
-      var appPath = this.appPaths[i];
+    for(var i = 0; i < self.appPaths.length; i++){
+      var appPath = self.appPaths[i];
       var path = [NSString stringWithFormat:@"%@", appPath];
       appPath = path.expandTilde();
 

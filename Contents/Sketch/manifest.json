@@ -29,7 +29,7 @@
     ],
   },
   "identifier" : "com.github.contentsync.sketchcontentsync",
-  "version" : "0.4.1",
+  "version" : "0.4.2",
   "description" : "Sync google doc content",
   "authorEmail" : "support@contentsync.io"
 }
