@@ -3,20 +3,25 @@
   "author" : "David Brody",
   "commands" : [
     {
-      "script" : "contentsync.google.js",
+      "script" : "contentsync.platform.js",
       "handler" : "onRun",
-      "shortcut" : "option s",
-      "name" : "Google Sync",
-      "identifier" : "google_contentsync"
+      "shortcut" : "option p",
+      "name" : "Platform Sync",
+      "identifier" : "platform_contentsync"
+    },
+    {
+      "script" : "contentsync.appopen.js",
+      "handler" : "onRun",
+      "identifier" : "appopen_contentsync"
     },
   ],
   "menu": {
     "items": [
-      "google_contentsync",
+      "platform_contentsync"
     ],
   },
-  "identifier" : "com.github.dbrody.sketchcontentsync",
-  "version" : "0.3.6",
-  "description" : "Sync google doc content",
-  "authorEmail" : "dbrody@gmail.com"
+  "identifier" : "com.github.contentsync.sketchcontentsync",
+  "version" : "1.0.0",
+  "description" : "Sync Content with Google Spreadsheets and more - see ContentSync.io",
+  "authorEmail" : "support@contentsync.io"
 }

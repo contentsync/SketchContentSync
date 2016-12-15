@@ -1,0 +1,90 @@
+
+var Utils = {};
+
+Utils.getSketchVersionNumber = function() {
+  const version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+  var versionNumber = version.stringByReplacingOccurrencesOfString_withString(".", "") + ""
+  while(versionNumber.length != 3) {
+    versionNumber += "0"
+  }
+  return parseInt(versionNumber)
+};
+
+Utils.getSketchMajorVersion = function() {
+  const version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+  return (version+"").substr(0, 3)
+};
+
+Utils.createDict = function(objects,keys){
+    return NSDictionary.dictionaryWithObjects_forKeys(objects, keys);
+};
+
+Utils.objToDict = function(obj){
+  if(typeof obj != 'object'){
+    return "" + obj;
+  }
+  var keys = Object.keys(obj);
+  var values = new Array(keys.length);
+
+  for(var i = 0, l = keys.length, value; i < l; ++i){
+    value = obj[""+keys[i]];
+    values[i] = Utils.objToDict(value);
+  }
+
+  return Utils.createDict(values,keys);
+}
+
+
+Utils.dictToObj = function(dict){
+  var obj  = {};
+  if(dict != null){
+    var keys = dict.allKeys();
+    for(var i = 0, l = keys.count(), key, value; i < l; ++i){
+      key = keys[i];
+      value = dict.objectForKey_(key);
+      if(value.class() == '__NSDictionaryI'){
+        obj[key] = Utils.dictToObj(value);
+      } else {
+        obj[key] = String(value);
+      }
+    }
+  }
+  return obj;
+};
+
+//
+
+Utils.getTempFolderPath = function(withName) {
+  var fileManager = [NSFileManager defaultManager];
+  var cachesURL = [[fileManager URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject];
+  if(typeof withName !== 'undefined') return [[cachesURL URLByAppendingPathComponent:kPluginDomain] path] + "/" + withName;
+  return [[cachesURL URLByAppendingPathComponent:kPluginDomain] path] + "/" + [[NSDate date] timeIntervalSince1970];
+};
+
+Utils.writeTextToFile = function(text, filePath) {
+  log("Writing to :" + filePath);
+  log(text);
+
+  var t = [NSString stringWithFormat:@"%@", text],
+  f = [NSString stringWithFormat:@"%@", filePath];
+  return [t writeToFile:f atomically:true encoding:NSUTF8StringEncoding error:nil];
+};
+
+Utils.createFolderForPath = function(pathString) {
+  var fileManager = [NSFileManager defaultManager];
+  if([fileManager fileExistsAtPath:pathString]) return true;
+  return [fileManager createDirectoryAtPath:pathString withIntermediateDirectories:true attributes:nil error:nil]
+}
+
+Utils.showDialog = function(message, OKHandler) {
+  var alert = [COSAlertWindow new];
+  [alert setMessageText: kPluginName]
+  [alert setInformativeText: message]
+  // var scriptPath = sketch.scriptPath,
+  //     folder = [scriptPath stringByDeletingLastPathComponent],
+  //   iconPath = folder + "/library/",
+  //     icon = [[NSImage alloc] initByReferencingFile:iconPath]
+  // [alert setIcon:icon]
+  var responseCode = [alert runModal];
+  if(OKHandler != nil && responseCode == 0) OKHandler()
+}
