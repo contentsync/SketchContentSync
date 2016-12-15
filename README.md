@@ -69,34 +69,27 @@ Naming a text field with a name as `sync:[key]`, replacing `[key]` with the key 
 
 ## 3. Run ContentSync Sketch Plugin
 
-### 3.1 Run Plugin
+![Run](./docs/sketchdropdown.png)
 
-![Run](./docs/run.png)
+## 4. If you are not logged in, it will redirect you.
 
-### 3.2 Enter Google Doc URL
+![Run](./docs/appsignedout.png)
 
-The URL must be public. To get the Google Document URL use either:
+## 5. After you create a free account, it will log in 
 
-+ Share doc via `File` > `Publish to the web...`
-+ Use https://sheetsu.com
+![Run](./docs/appsignedin.png)
 
-![Run](./docs/google_path.png)
+## 6. Now sync one more time and it will prompt for project
 
-### 3.3 Choose Language / Variation
+![Run](./docs/appselectproject.png)
 
-The language/variation is each of the columns in the google document.
+If you do not have any projects, go to [www.contentsync.io](http://contentsync.io/) and create one with the easy stepthrough.
 
-![Run](./docs/variant.png)
+## 6. Now sync one more time and it will prompt for project
 
-### 3.4 Voila!
+![Run](./docs/appsynced.png)
+
+## 7. Voila
 
 ![Run](./docs/result.png)
 
-
-## References
-
-This was created using concepts from:
-
-+ http://developer.sketchapp.com/
-+ https://github.com/rodi01/RenameIt
-+ https://github.com/nolastan/sync.sketchplugin
