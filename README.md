@@ -1,22 +1,15 @@
 [![GitHub version](https://badge.fury.io/gh/contentsync%2FSketchContentSync.sketchplugin.svg)](https://badge.fury.io/gh/contentsync%2FSketchContentSync.sketchplugin)
 
-# Sketch Content Sync
+# SketchContentSync
 
-Visit [www.contentsync.io](http://contentsync.io/).
+Synchronize your content between google spreadsheets and Sketch.app.
 
-Dynamically update content within sketch files.
+Now supports both public and private google spreadsheets.
 
-Currently support:
 
-+ [Google Spreadsheets](https://docs.google.com)
-+ [Sheetsu](https://sheetsu.com)
+# Downloading & ContentSync Platform
 
-# Installation
-
-+ Download the [zip file](https://github.com/contentsync/SketchContentSync.sketchplugin/releases/download/v0.3.3/SketchContentSync.sketchplugin.zip)
-+ Unzip the zip file
-+ Make sure the name of the file is `SketchContentSync.sketchplugin`.
-+ Double click on the `SketchContentSync.sketchplugin` to install it into Sketch.
+Register for free at [www.contentsync.io](http://contentsync.io/) and get started easily.
 
 # Features
 
@@ -57,25 +50,7 @@ Customize text per symbol instance. Naming a text element `sync:<key>` within a 
 
 # How to Install It
 
-+ Download the Zip File
-+ Double click on the .sketchplugin file
-+ Available in Sketch under `Plugins` > `SketchContentSync`
-
-
-# Quick Example
-
-+ Download and open [this sketch file](./examples/simpleexample.sketch)
-+ Run **SketchContentSync > Google Sync** under the **Plugins** menu
-+ **Sync Google Document Text** Popup
-  + Paste this URL in the URL popup: `https://docs.google.com/spreadsheets/d/1xkkFbXdCEC2Rr_rxO74jdZ30SZSxBuzLdNPFlhsjPws/`
-  + Press `Sync`
-+ **Sync Content Version** Popup
-  + Use default and press `Sync`
-+ Voila! The content in the Sketch should have updated.
-+ Notice there are some spelling errors in the synced content. Try syncing again with another version or even another language.
-
-[You can see the sample spreadsheet used for this example here.](https://docs.google.com/spreadsheets/d/1xkkFbXdCEC2Rr_rxO74jdZ30SZSxBuzLdNPFlhsjPws/edit?usp=sharing)
-
+Register for free at [www.contentsync.io](http://contentsync.io/) and get started easily.
 
 # How to use it
 
