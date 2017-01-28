@@ -84,6 +84,23 @@ var TextLayerSync = function(layer)
     }
   };
 
+  this.get = function(){
+    var r = {};
+    var layerName = _layer.name();
+    var parts = layerName.split(':');
+    var syncPart = parts[0];
+    if(syncPart == "sync"){
+      var keyname = parts[1];
+      r[keyname] = _layer.stringValue();
+    } else {
+      var originalName = _layer.name();
+      _layer.name = "sync:" + originalName;
+      _layer.nameIsFixed = true
+      r[originalName] = _layer.stringValue();
+    }
+    return r;
+  };
+
 
   // Returns true if _layer is found as belonging to a SymbolMaster
   this.isInSymbol = function(stateStore){

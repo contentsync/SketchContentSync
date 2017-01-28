@@ -10,8 +10,8 @@ var MacOSAppCommunicator = function(context){
   // List of paths where the ContentSync.app may be
   // Multiple items is useful for development.
   self.appPaths = [
-    "~/Library/Developer/Xcode/DerivedData/ContentSync-aczvmrxkkrbszrftgltjcizttdxl/Build/Products/Debug/ContentSync.app",
-    "/Applications/ContentSync.app"
+    "/Applications/ContentSync.app",
+    "~/Library/Developer/Xcode/DerivedData/ContentSync-aczvmrxkkrbszrftgltjcizttdxl/Build/Products/Debug/ContentSync.app"
   ];
 
   self.sendJSONCommands = function(params) {

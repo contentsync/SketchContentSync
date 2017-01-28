@@ -5,9 +5,16 @@
     {
       "script" : "contentsync.platform.js",
       "handler" : "onRun",
-      "shortcut" : "option p",
+      "shortcut" : "option s",
       "name" : "Platform Sync",
       "identifier" : "platform_contentsync"
+    },
+    {
+      "script" : "contentpush.platform.js",
+      "handler" : "onContentPushRun",
+      "shortcut" : "option p",
+      "name" : "Platform Push",
+      "identifier" : "platform_push"
     },
     {
       "script" : "contentsync.appopen.js",
@@ -17,7 +24,8 @@
   ],
   "menu": {
     "items": [
-      "platform_contentsync"
+      "platform_contentsync",
+      "platform_push"
     ],
   },
   "identifier" : "com.github.contentsync.sketchcontentsync",

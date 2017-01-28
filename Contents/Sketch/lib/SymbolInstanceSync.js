@@ -49,6 +49,10 @@ var SymbolInstanceSync = function(layer)
     return _message;
   }
 
+  this.get = function(){
+    return {};
+  };
+
   this.sync = function(stateStore) {
     this.dataStore = stateStore.data_version();
     this.masterSymbolMap = stateStore.get('symbolmap');

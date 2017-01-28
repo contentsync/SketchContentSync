@@ -62,9 +62,6 @@ Utils.getTempFolderPath = function(withName) {
 };
 
 Utils.writeTextToFile = function(text, filePath) {
-  log("Writing to :" + filePath);
-  log(text);
-
   var t = [NSString stringWithFormat:@"%@", text],
   f = [NSString stringWithFormat:@"%@", filePath];
   return [t writeToFile:f atomically:true encoding:NSUTF8StringEncoding error:nil];
@@ -87,4 +84,23 @@ Utils.showDialog = function(message, OKHandler) {
   // [alert setIcon:icon]
   var responseCode = [alert runModal];
   if(OKHandler != nil && responseCode == 0) OKHandler()
-}
+};
+
+Utils.writeToLog = function(text){
+  var path = "~/Library/Logs/SketchContentSync/logging.log";
+  var nspath = [NSString stringWithFormat:@"%@", path];
+  var logPath = [nspath expandTilde];
+  this.createFolderForPath([logPath stringByDeletingLastPathComponent]);
+  this.writeTextToFile(text, logPath);
+};
+
+Utils.writeDictToLog = function(dict){
+  var d = [NSMutableDictionary new];
+  for (var key in params) {
+    val = params[key]
+    [d setValue:val forKey:key]
+  }
+  var jData = [NSJSONSerialization dataWithJSONObject:d options:0 error:nil];
+  var jsonString = [[NSString alloc] initWithData:jData encoding:NSUTF8StringEncoding];
+  this.writeToLog(jsonString);
+};
