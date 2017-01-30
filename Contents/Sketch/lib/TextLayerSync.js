@@ -84,23 +84,42 @@ var TextLayerSync = function(layer)
     }
   };
 
-  this.get = function(){
+  this.get = function(stateStore){
+    var rawkeyName = this.contentKeyName();
+
+    // Is in Symbol?
     var r = {};
+    if(rawkeyName != null){
+      keyName = rawkeyName;
+      if(this.isInSymbol(stateStore)){
+        keyName += "[default]";
+      }
+      r[keyName] = _layer.stringValue();
+      if(rawkeyName == _layer.name()){
+        _layer.name = "sync:" + rawkeyName;
+        _layer.nameIsFixed = true
+      }
+    }
+    return r;
+  }
+
+  this.contentKeyName = function(){
     var layerName = _layer.name();
     var parts = layerName.split(':');
     var syncPart = parts[0];
     if(syncPart == "sync"){
       var keyname = parts[1];
-      r[keyname] = _layer.stringValue();
+      // Only take names that arent formulas
+      var keyParts = keyname.split('+');
+      if(keyParts.length == 1){
+        return keyname;
+      } else {
+        return null;
+      }
     } else {
-      var originalName = _layer.name();
-      _layer.name = "sync:" + originalName;
-      _layer.nameIsFixed = true
-      r[originalName] = _layer.stringValue();
+      return _layer.name();
     }
-    return r;
   };
-
 
   // Returns true if _layer is found as belonging to a SymbolMaster
   this.isInSymbol = function(stateStore){
