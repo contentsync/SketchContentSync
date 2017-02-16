@@ -6,10 +6,12 @@ Synchronize your content between google spreadsheets and Sketch.app.
 
 Now supports both public and private google spreadsheets.
 
-
 # Downloading & ContentSync Platform
 
 Register for free at [www.contentsync.io](http://contentsync.io/) and get started easily.
+
+## Previous Version v0.3.3
+You can download v0.3.3 which does not require a ContentSync Platform account [here](https://github.com/contentsync/SketchContentSync.sketchplugin/releases/download/v0.3.3/SketchContentSync.sketchplugin.zip). This version has fewer features.
 
 # Features
 
