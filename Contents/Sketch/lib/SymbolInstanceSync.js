@@ -36,6 +36,7 @@ OtherSymbol will get the text override 'BAR'
 AnotherSymbol will get the text override 'FOO'
 
 */
+
 var SymbolInstanceSync = function(layer)
 {
   var _layer = layer
@@ -48,6 +49,37 @@ var SymbolInstanceSync = function(layer)
   this.message = function(){
     return _message;
   }
+
+  this.get = function(stateStore){
+    var r = {};
+    var masterSymbolMap = stateStore.get('symbolmap');
+    var masterSymbol = masterSymbolMap[_layer.symbolID()];
+
+    var symbolName = _layer.name().toLowerCase();
+    var masterName = masterSymbol.defaultName.toLowerCase();
+    var values = _layer.overrides();
+
+    for(var i = 0; i < masterSymbol.textlayers.count(); i++){
+      var layer = masterSymbol.textlayers.objectAtIndex(i);
+      var layersyncer = new TextLayerSync(layer);
+      var keyname = layersyncer.contentKeyName();
+      if(keyname != null){
+        var value = "";
+        var objId = layer.objectID();
+        if(values.objectForKey(objId)){
+          value = values.objectForKey(objId);
+        } else if(values.objectForKey(0)){
+          value = values.objectForKey(0).objectForKey(objId);
+        }
+        var key = keyname + "\[default\]"
+        if(masterName != symbolName){
+          key = keyname + "\[" + symbolName + "\]";
+        }
+        r[key] = value;
+      }
+    }
+    return r;
+  };
 
   this.sync = function(stateStore) {
     this.dataStore = stateStore.data_version();
@@ -71,7 +103,7 @@ var SymbolInstanceSync = function(layer)
     } else {
       mutableValues = [[NSMutableDictionary alloc] init]
     }
-    
+
     var newOverrides = {};
     for(var i = 0; i < masterSymbol.textlayers.count(); i++){
       var layer = masterSymbol.textlayers.objectAtIndex(i);
@@ -87,7 +119,7 @@ var SymbolInstanceSync = function(layer)
     // Only overwrite if no errors
     _layer.overrides = mutableValues;
   };
-    
+
 
   this.parseValueForLayer = function(layer){
     this._layerName = layer.name();
@@ -145,7 +177,7 @@ var SymbolInstanceSync = function(layer)
   this.parseError = function(partKey){
     if(!this.hasMessage()){
       _message = "";
-    } 
+    }
     _message += '\nInvalid Key: ' + partKey + ' used in \'' + this._layerName + '\'';
     return "";
   };

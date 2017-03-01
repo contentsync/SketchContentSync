@@ -6,9 +6,6 @@ Updates all text layers with version content.
 
 */
 
-@import './lib/TextLayerSync.js';
-@import './lib/SymbolInstanceSync.js';
-
 var TextLayerUpdater = function(doc){
 
   this._doc = doc;
