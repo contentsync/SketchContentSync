@@ -73,17 +73,59 @@ Utils.createFolderForPath = function(pathString) {
   return [fileManager createDirectoryAtPath:pathString withIntermediateDirectories:true attributes:nil error:nil]
 }
 
-Utils.showDialog = function(message, OKHandler) {
+Utils.showDialog = function(message, OKHandler, img) {
   var alert = [COSAlertWindow new];
   [alert setMessageText: kPluginName]
   [alert setInformativeText: message]
-  // var scriptPath = sketch.scriptPath,
-  //     folder = [scriptPath stringByDeletingLastPathComponent],
-  //   iconPath = folder + "/library/",
-  //     icon = [[NSImage alloc] initByReferencingFile:iconPath]
-  // [alert setIcon:icon]
+  if(img){
+    var icon = NSImage.alloc().initByReferencingFile(img);
+    [alert setIcon:icon]
+  }
   var responseCode = [alert runModal];
   if(OKHandler != nil && responseCode == 0) OKHandler()
+};
+
+Utils.showDownloadModal = function(message, img){
+  var alert = [COSAlertWindow new];
+  [alert setMessageText: kPluginName]
+  [alert setInformativeText: message]
+  alert.addButtonWithTitle('Download ContentSync.app');
+  alert.addButtonWithTitle('OK');
+  if(img){
+    var icon = NSImage.alloc().initByReferencingFile(img);
+    [alert setIcon:icon]
+  }
+  var responseCode = [alert runModal];
+  if(responseCode == 1000){
+    var url = [NSURL URLWithString:@"https://www.contentsync.io/download"]
+    if(![[NSWorkspace sharedWorkspace] openURL:url]){
+        this.showDialog(@"Failed to open url:" + [url description])
+    }
+  }
+};
+
+Utils.ContentSyncAppInstalled = function(){
+  var task = NSTask.alloc().init();
+  task.setLaunchPath("/usr/bin/osascript");
+  var args = NSArray.arrayWithObjects("-e", 'id of app "ContentSync"', nil);
+  task.setArguments(args)
+  var outputPipe = [NSPipe pipe]
+  [task setStandardOutput:outputPipe]
+  task.launch()
+  var outputData = [[outputPipe fileHandleForReading] readDataToEndOfFile]
+  var outputString = [[[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding]]
+  return (outputString == "com.syncify.ContentSync\n");
+};
+
+Utils.ContentSyncAppOpen = function(){
+  var task = NSTask.alloc().init();
+  task.setLaunchPath("/usr/bin/open");
+  var args = NSArray.arrayWithObjects("-a", "ContentSync");
+  task.setArguments(args)
+  var outputPipe = [NSPipe pipe]
+  [task setStandardOutput:outputPipe]
+  task.launch()
+  var outputData = [[outputPipe fileHandleForReading] readDataToEndOfFile];
 };
 
 Utils.writeToLog = function(text){

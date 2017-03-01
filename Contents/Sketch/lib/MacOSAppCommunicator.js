@@ -71,7 +71,16 @@ var MacOSAppCommunicator = function(context){
         return true;
       }
     }
-    Utils.showDialog("Could not launch plugin. Please make sure you have ContentSync.app installed - visit contentsync.io.")
+
+    if(Utils.ContentSyncAppInstalled()){
+      Utils.ContentSyncAppOpen();
+    } else {
+      var scriptPath = self.context.scriptPath;
+      var folder = [scriptPath stringByDeletingLastPathComponent];
+      folder = [folder stringByDeletingLastPathComponent];
+      var img = folder + "/assets/images/contentsyncplatform.png";
+      Utils.showDownloadModal("Could not launch plugin. Please make sure you have ContentSync.app installed - visit contentsync.io.", img)
+    }
   };
 
   self.sendViaCommandLine = function(jsonString){
