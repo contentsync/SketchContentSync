@@ -1,4 +1,3 @@
-@import './lib/Utils.js'
 
 var kPluginName = "ContentSync",
   kPluginDomain = "com.syncify.ContentSync"
@@ -15,34 +14,52 @@ var MacOSAppCommunicator = function(context){
   ];
 
   self.sendJSONCommands = function(params) {
-    if(!self.context.document || !self.context.document.fileURL()){
-      Utils.showDialog("Could not launch plugin. Please save this file first.")
+    if(!Utils){
+      log("Utils not loaded.");
       return;
-    };
-    var sketchFilePath = self.context.document.fileURL().path();
-    var
-      sp = self.context.scriptPath,
-      uniqueID = [[NSUUID UUID] UUIDString],
-      tempFolderPath = Utils.getTempFolderPath("temp-commands/"+uniqueID),
-      jsonPath = sketchFilePath + ".contentsync",
-      bundlePath = [[NSBundle mainBundle] bundlePath],
-      appName = [[NSFileManager defaultManager] displayNameAtPath: bundlePath],
-      d = [NSMutableDictionary new],
-      val;
+    }
+    //var sp = self.context.scriptPath;
+    var d = [NSMutableDictionary new];
+
+    var sketchFileID = "";
+    var sketchFilePath = "";
+    var sketchFileName = "";
+    if(!self.context.document || !self.context.document.fileURL()){
+      // Unknown Sketch File...
+    } else {
+      sketchFileID = self.context.document.documentData().objectID();
+      sketchFilePath = self.context.document.fileURL().path();
+      sketchFileName = [sketchFilePath lastPathComponent];
+    }
 
     for (var key in params) {
-      val = params[key]
+      var val = params[key]
       [d setValue:val forKey:key]
     }
-    [d setValue:[sketchFilePath lastPathComponent] forKey:"sketchfilename"]
     [d setValue:sketchFilePath forKey:"sketchfilepath"]
+    [d setValue:sketchFileName forKey:"sketchfilename"]
+    [d setValue:sketchFileID forKey:"sketchfileid"]
     [d setValue:kPluginDomain forKey:"pluginDomain"]
 
     var jData = [NSJSONSerialization dataWithJSONObject:d options:0 error:nil];
     var jsonString = [[NSString alloc] initWithData:jData encoding:NSUTF8StringEncoding]
 
-    Utils.writeTextToFile(jsonString, jsonPath)
+    var shouldWriteToFile = params["skipwrite"]
+    if(params["skipwrite"] != true){
+      // Communicate via files
+      self.sendViaFile(jsonString);
+    } else {
+      // Communicate via command line
+      self.sendViaCommandLine(jsonString);
+    }
+  };
 
+  self.sendViaFile = function(jsonString){
+    var uniqueID = [[NSUUID UUID] UUIDString];
+    var tempFolderPath = Utils.getTempFolderPath("temp-commands/"+uniqueID);
+    var jsonPath = tempFolderPath + "/command.contentsync";
+    Utils.createFolderForPath(tempFolderPath)
+    Utils.writeTextToFile(jsonString, jsonPath)
     // Try each path until one succeeds
     for(var i = 0; i < self.appPaths.length; i++){
       var appPath = self.appPaths[i];
@@ -51,10 +68,13 @@ var MacOSAppCommunicator = function(context){
 
       if([[NSWorkspace sharedWorkspace] openFile:jsonPath withApplication:appPath]]) {
         // Able to launch with path
-        log("Found at path: " + appPath);
         return true;
       }
     }
-    Utils.showDialog("Could not launch plugin. Please make sure you have ContentSync.app installed.")
-  }
+    Utils.showDialog("Could not launch plugin. Please make sure you have ContentSync.app installed - visit contentsync.io.")
+  };
+
+  self.sendViaCommandLine = function(jsonString){
+    log(jsonString)
+  };
 };

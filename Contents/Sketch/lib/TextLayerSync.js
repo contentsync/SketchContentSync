@@ -32,7 +32,6 @@ var TextLayerSync = function(layer)
     }
 
     var layerName = _layer.name();
-    var parts = layerName.split(':');
 
     function wildcardMatch(key, store) {
       var rex = new RegExp(key.replace('*', '.*'), 'i');
@@ -47,40 +46,43 @@ var TextLayerSync = function(layer)
       return null;
     }
 
-    if(parts.length == 2){
-      var syncPart = parts[0];
-      var namePart = parts[1];
-      if(syncPart == "sync"){
-        var newValue = '';
+    var parts = layerName.split(':');
+    var newValue = '';
+    var namePart = '';
 
-        // Now support `key+'constant'+key` concatenation
-        var keyParts = namePart.split('+');
-        for(var k = 0; k < keyParts.length; k++){
-          var keyValue = keyParts[k].replace(/^\s+|\s+$/g, '');
-          if(keyValue[0] == '\'' && keyValue[keyValue.length-1] == '\''){
-            newValue += keyValue.substring(1, keyValue.length-1);
-          } else if(this.dataStore[keyValue]){
-            var value = this.dataStore[keyValue];
-            newValue += value;
-          } else if (wildcardMatch(keyValue, this.dataStore)) {
-            var randomMatchedValue = wildcardMatch(keyValue, this.dataStore);
-            newValue += randomMatchedValue;
-            _message += '\nUsed wildcard ' + randomMatchedValue;
-          } else {
-            invalidKey = true;
-            if(!this.hasMessage()){
-              _message = "";
-            }
-            _message += '\nInvalid Key: ' + keyValue + ' used in \'' + layerName + '\'';
-          }
-        }
+    // If it doesnt start with sync: use the layer name
+    if(parts.length > 1 && parts[0] == "sync"){
+      namePart = parts.slice(1).join(':')
+    } else {
+      namePart = layerName;
+    }
 
-        // Only update if new text is not blank
-        if(newValue.length > 0){
-          newValue = newValue.replace(/\\n/g, '\n');
-          _layer.stringValue = newValue;
+    // Now support `key+'constant'+key` concatenation
+    var keyParts = namePart.split('+');
+    for(var k = 0; k < keyParts.length; k++){
+      var keyValue = keyParts[k].replace(/^\s+|\s+$/g, '');
+      if(keyValue[0] == '\'' && keyValue[keyValue.length-1] == '\''){
+        newValue += keyValue.substring(1, keyValue.length-1);
+      } else if(this.dataStore[keyValue]){
+        var value = this.dataStore[keyValue];
+        newValue += value;
+      } else if (wildcardMatch(keyValue, this.dataStore)) {
+        var randomMatchedValue = wildcardMatch(keyValue, this.dataStore);
+        newValue += randomMatchedValue;
+        _message += '\nUsed wildcard ' + randomMatchedValue;
+      } else {
+        invalidKey = true;
+        if(!this.hasMessage()){
+          _message = "";
         }
+        _message += '\nInvalid Key: ' + keyValue + ' used in \'' + layerName + '\'';
       }
+    }
+
+    // Only update if new text is not blank
+    if(newValue.length > 0){
+      newValue = newValue.replace(/\\n/g, '\n');
+      _layer.stringValue = newValue;
     }
   };
 
@@ -96,7 +98,7 @@ var TextLayerSync = function(layer)
       }
       r[keyName] = _layer.stringValue();
       if(rawkeyName == _layer.name()){
-        _layer.name = "sync:" + rawkeyName;
+        // _layer.name = "sync:" + rawkeyName;
         _layer.nameIsFixed = true
       }
     }

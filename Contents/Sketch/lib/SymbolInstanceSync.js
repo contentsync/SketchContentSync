@@ -37,8 +37,6 @@ AnotherSymbol will get the text override 'FOO'
 
 */
 
-@import './lib/TextLayerSync.js';
-
 var SymbolInstanceSync = function(layer)
 {
   var _layer = layer

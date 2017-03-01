@@ -3,33 +3,37 @@
   "author" : "David Brody",
   "commands" : [
     {
-      "script" : "contentsync.platform.js",
+      "script" : "commands/contentsync.actions.pull.js",
       "handler" : "onRun",
-      "shortcut" : "option s",
-      "name" : "Platform Sync",
-      "identifier" : "platform_contentsync"
+      "identifier" : "contentsync.actions.pull"
     },
     {
-      "script" : "contentpush.platform.js",
-      "handler" : "onContentPushRun",
-      "shortcut" : "option p",
-      "name" : "Platform Push",
-      "identifier" : "platform_push"
+      "script" : "commands/contentsync.actions.push.js",
+      "handler" : "onRun",
+      "identifier" : "contentsync.actions.push"
     },
     {
-      "script" : "contentsync.appopen.js",
+      "script" : "commands/contentsync.actions.getfilename.js",
       "handler" : "onRun",
-      "identifier" : "appopen_contentsync"
+      "identifier" : "contentsync.actions.getfilename"
     },
+    {
+      "name":"Toggle ContentSync",
+      "identifier":"contentsync.actions.openosx",
+      "shortcut":"cmd =",
+      "script":"commands/contentsync.actions.openosx.js",
+      "handler":"onRun"
+    }
   ],
-  "menu": {
-    "items": [
-      "platform_contentsync",
-      "platform_push"
-    ],
+  "menu":{
+    "title":"Toggle ContentSync",
+    "isRoot":true,
+    "items":[
+      "contentsync.actions.openosx"
+    ]
   },
-  "identifier" : "com.github.contentsync.sketchcontentsync",
-  "version" : "1.0.0",
+  "identifier": "com.github.contentsync.sketchcontentsync",
+  "version" : "1.1.1",
   "description" : "Sync Content with Google Spreadsheets and more - see ContentSync.io",
   "authorEmail" : "support@contentsync.io"
 }
