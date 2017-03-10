@@ -34,7 +34,9 @@ var TextLayerSync = function(layer)
     var layerName = _layer.name();
 
     function wildcardMatch(key, store) {
-      var rex = new RegExp(key.replace('*', '.*'), 'i');
+      key = key.replace('*', '.*');
+      key = '/^' + key + '$/';
+      var rex = new RegExp(key, 'i');
       var candidateKeys = Object.keys(store);
       var matchedKeys = candidateKeys.filter(function(key) {
         return rex.test(key);

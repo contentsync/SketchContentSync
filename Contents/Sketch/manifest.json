@@ -33,7 +33,7 @@
     ]
   },
   "identifier": "com.github.contentsync.sketchcontentsync",
-  "version" : "1.1.1",
+  "version" : "1.1.2",
   "description" : "Sync Content with Google Spreadsheets and more - see ContentSync.io",
   "authorEmail" : "support@contentsync.io"
 }
