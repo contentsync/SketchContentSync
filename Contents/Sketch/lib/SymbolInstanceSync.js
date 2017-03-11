@@ -55,10 +55,9 @@ var SymbolInstanceSync = function(layer)
     var masterSymbolMap = stateStore.get('symbolmap');
     var masterSymbol = masterSymbolMap[_layer.symbolID()];
 
-    var symbolName = _layer.name().toLowerCase();
-    var masterName = masterSymbol.defaultName.toLowerCase();
+    var symbolName = _layer.name();
+    var masterName = masterSymbol.defaultName;
     var values = _layer.overrides();
-
     for(var i = 0; i < masterSymbol.textlayers.count(); i++){
       var layer = masterSymbol.textlayers.objectAtIndex(i);
       var layersyncer = new TextLayerSync(layer);
@@ -66,15 +65,16 @@ var SymbolInstanceSync = function(layer)
       if(keyname != null){
         var value = "";
         var objId = layer.objectID();
-        if(values.objectForKey(objId)){
-          value = values.objectForKey(objId);
-        } else if(values.objectForKey(0)){
-          value = values.objectForKey(0).objectForKey(objId);
+        if(!values){
+          continue
+        } else {
+          if(values.objectForKey(objId)){
+            value = values.objectForKey(objId);
+          } else if(values.objectForKey(0)){
+            value = values.objectForKey(0).objectForKey(objId);
+          }
         }
-        var key = keyname + "\[default\]"
-        if(masterName != symbolName){
-          key = keyname + "\[" + symbolName + "\]";
-        }
+        var key = keyname + "\[" + symbolName + "\]";
         r[key] = value;
       }
     }
@@ -123,26 +123,23 @@ var SymbolInstanceSync = function(layer)
 
   this.parseValueForLayer = function(layer){
     this._layerName = layer.name();
-    var parts = this._layerName.split(':');
-    if(parts.length == 2){
-      var syncPart = parts[0];
-      var namePart = parts[1];
-      if(syncPart == "sync"){
-        var newValue = '';
+    var namePart = this._layerName;
+    var parts = namePart.split(':');
+    var newValue = '';
+    if(parts[0] == 'sync'){
+      namePart = parts.slice(1).join(':');
+    }
+    // Split by '+' to support `key+'constant'+key` concatenation
+    var keyParts = namePart.split('+');
+    for(var k = 0; k < keyParts.length; k++){
+      var keyValue = keyParts[k].replace(/^\s+|\s+$/g, '');
+      newValue += this.parsePart(keyValue);
+    }
 
-        // Split by '+' to support `key+'constant'+key` concatenation
-        var keyParts = namePart.split('+');
-        for(var k = 0; k < keyParts.length; k++){
-          var keyValue = keyParts[k].replace(/^\s+|\s+$/g, '');
-          newValue += this.parsePart(keyValue);
-        }
-
-        // Only update if new text is not blank
-        if(newValue.length > 0){
-          newValue = newValue.replace(/\\n/g, '\n');
-          return newValue;
-        }
-      }
+    // Only update if new text is not blank
+    if(newValue.length > 0){
+      newValue = newValue.replace(/\\n/g, '\n');
+      return newValue;
     }
     return null;
   };
@@ -151,7 +148,7 @@ var SymbolInstanceSync = function(layer)
   this.parsePart = function(partKey){
     return (
       this.parsePartStaticString(partKey) ||
-      this.parsePartDictLookup(partKey + '[' + _layer.name().toLowerCase() + ']') ||
+      this.parsePartDictLookup(partKey + '[' + _layer.name() + ']') ||
       this.parsePartDictLookup(partKey) ||
       this.parseError(partKey)
     );
