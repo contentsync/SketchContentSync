@@ -1,0 +1,5 @@
+-[ContentSyncPanelManager helloText]
+-[ContentSyncPanelManager openOSXApp]
+-[ContentSyncPanelManager getFileName]
+-[ContentSyncPanelManager pull]
+-[ContentSyncPanelManager push]

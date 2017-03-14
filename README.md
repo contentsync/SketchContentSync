@@ -1,97 +1,91 @@
-[![GitHub version](https://badge.fury.io/gh/contentsync%2FSketchContentSync.sketchplugin.svg)](https://badge.fury.io/gh/contentsync%2FSketchContentSync.sketchplugin)
+[![GitHub version](https://badge.fury.io/gh/contentsync%2FSketchContentSync.svg)](https://badge.fury.io/gh/contentsync%2FSketchContentSync.sketchplugin)
 
 # SketchContentSync
 
-Synchronize your content between google spreadsheets and Sketch.app.
+ContentSync Sketch Plugin.
 
-Now supports both public and private google spreadsheets.
-
-# Downloading & ContentSync Platform
-
-Register for free at [www.contentsync.io](http://contentsync.io/) and get started easily.
-
-## Previous Version v0.3.3
-You can download v0.3.3 which does not require a ContentSync Platform account [here](https://github.com/contentsync/SketchContentSync.sketchplugin/releases/download/v0.3.3/SketchContentSync.sketchplugin.zip). This version has fewer features.
-
-# Features
-
-### Content Synchronizing
-
-![Content Synchronizing](./docs/feature_syncvar.png)
-
-Naming any text element with the format `sync:<key>` will synchronize its content. The content will be from the spreadsheet row where the first cell's content matches `<key>`.
-
-### Content Localizing
-
-![Content Localizing](./docs/feature_contentversion.png)
-
-Each row may have many columns. Before each sync you may select which column to populate content from. This supports having different versions or localizations of your content.
-
-### Content Concatenating
-
-![Content Concatenating](./docs/feature_concat.png)
-
-A synchronized element's content can also be based on concatenating multiple `<key>`'s or constants. For example, you may use `sync:<key1> + <key2>` to generate content which is `<key1 value><key2 value>`. Furthermore you may concatente strings as well using `sync:<key1> + ' and ' + <key2>` which will result in the content `<key1 value> and <key2 value>`.
-
-To add new lines between items, use `'\n'` for example `sync:<key1> + '\n' + <key2>`.
-
-### Content wildcards
-
-A synchronized element's content can be chosen by pattern. For example
-if you have `<keys>` like `article1title` and `article2title`. You can
-select randomly between these by using `sync:article*title`. 
-
-### Symbol Content Overriding
-
-Customize text per symbol instance. Naming a text element `sync:<key>` within a Symbol definition then naming the used symbol, you can then use the content key `<key>[<symbolname>]` within the spreadsheet to set the content for the text within that specific symbol instance.
-
-![Symbol Overview](./docs/feature_symbol.png)
-
-[Learn more about symbol usage](./docs/symbols.md)
+Abstract, version, and translate your Sketch.app design content. Sync to Google Documents and more.
 
 
-# How to Install It
+## Downloading & ContentSync Platform
 
 Register for free at [www.contentsync.io](http://contentsync.io/) and get started easily.
 
-# How to use it
+Download plugin [here](./packaged/SketchContentSync.zip). Open zip file and double click on the .sketchplugin file.
 
-## 1. Create Google Document
+# Overview
 
-Create a google document with the content you want to use. The first column is the `[key]` of the content, and each column to the right is a translation / varition of that content.
+## Pull Data From Google Spreadsheets into Sketch.app
 
-![Doc Screen](./docs/doc_screen.png)
+![PUSH](./docs/contentsyncapp/feature_pull.jpg)
 
-## 2. Create text field(s)
+## Push Data From Sketch.app into Google Spreadsheets
 
-Naming a text field with a name as `sync:[key]`, replacing `[key]` with the key used in the google document will cause it to be synchronized. Other text fields will be ignored.
-
-![Start](./docs/start.png)
+![PUSH](./docs/contentsyncapp/feature_push.jpg)
 
 
-## 3. Run ContentSync Sketch Plugin
+# Interface Flow
 
-![Run](./docs/sketchdropdown.png)
+SketchContentSync works by integrating this plugin with the ContentSync.app.
 
-## 4. If you are not logged in, it will redirect you.
+### ContentSync.app
 
-![Run](./docs/appsignedout.png)
+![Welcome](./docs/contentsyncapp/welcome_sign_in.png)
 
-## 5. After you create a free account, it will log in 
+### Create Projects
 
-![Run](./docs/appsignedin.png)
+![Create Project](./docs/contentsyncapp/create_project.png)
 
-## 6. Now sync one more time and it will prompt for project
+### Link To Google Document
 
-![Run](./docs/appselectproject.png)
+![Create Project](./docs/contentsyncapp/create_google_doc.png)
 
-If you do not have any projects, go to [www.contentsync.io](http://contentsync.io/) and create one with the easy stepthrough.
+### Main Project Menu
 
-## 6. Now sync one more time and it will prompt for project
+![Create Project](./docs/contentsyncapp/actions.png)
 
-![Run](./docs/appsynced.png)
+## Pushing Data
 
-## 7. Voila
+Pushing data allows you to create a new version of data in your spreadsheet. This will _**write**_ to your google document.
 
-![Run](./docs/result.png)
+Takes a regular Sketch design...
 
+![PUSH](./docs/contentsyncapp/push_sketch_before.png)
+
+Prompts which fields to push and which version to push to...
+
+![PUSH](./docs/contentsyncapp/push.png)
+
+You can push to a new version or overwrite an existing one.
+
+![After Push](./docs/contentsyncapp/push_sheet.png)
+
+
+## Pulling Data
+
+Pulling data allows you to update you Sketch design from your Google spreadsheet. This will _**write**_ to your sketch file.
+
+### Take version from your spreadsheet:
+
+![PUSH](./docs/contentsyncapp/pull_sheet.png)
+
+### Prompts which version to pull from...
+
+![PUSH](./docs/contentsyncapp/pull.png)
+
+### Updates your sketch file...
+
+![After Push](./docs/contentsyncapp/pull_sketch_after.png)
+
+# Support / Bugs / Feature Requests
+
+Please submit an issue or contact [support@contentsync.io](mailto:support@contentsync.io).
+
+# Roadmap
+
++ Support each Sketch.app design page as a separate Spreadsheet Sheet
++ Support advanced text styling per layer (various fonts, sizes, weights, etc)
++ Support image previews of contextual content
++ Better support of nested symbols
++ Improved naming scheme for additional use cases
++ Support one click design translation

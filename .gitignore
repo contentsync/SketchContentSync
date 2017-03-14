@@ -1,1 +1,13 @@
-Contents/Sketch/node_modules
+node_modules/
+.DS_Store
+build/
+dist/
+
+src/custom-presets
+.DB_Store
+*.log
+.DS_Store
+
+src/frameworks/ContentSync.framework/ContentSync.build
+
+
