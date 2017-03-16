@@ -10,4 +10,6 @@ src/custom-presets
 
 src/frameworks/ContentSync.framework/ContentSync.build
 
+release.sh
+
 
