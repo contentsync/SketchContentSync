@@ -13,8 +13,6 @@ Register for free at [www.contentsync.io](http://contentsync.io/) and get starte
 
 Download plugin [here](./packaged/SketchContentSync.zip). Open zip file and double click on the .sketchplugin file.
 
-[![Install SketchContentSync with Sketchpacks](http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png "Install SketchContentSync with Sketchpacks")](https://sketchpacks.com/contentsync/SketchContentSync/install)
-
 # Overview
 
 ## Pull Data From Google Spreadsheets into Sketch.app
