@@ -1,0 +1,6 @@
+framework module ContentSync {
+  umbrella header "ContentSync.h"
+
+  export *
+  module * { export * }
+}

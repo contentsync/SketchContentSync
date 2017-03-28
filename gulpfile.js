@@ -151,9 +151,22 @@ gulp.task('uninstall-plugin', ['prepare-manifest'], function(){
     return del([SKETCH_PLUGINS_FOLDER + '/' + name], { force: true });
 });
 
-gulp.task('install-plugin', ['uninstall-plugin'], function(){
+gulp.task('install-plugin', ['uninstall-plugin', 'install-root'], function(){
     return gulp.src(["dist/**/*.*", "dist/**/*"])
         .pipe(gulp.dest(SKETCH_PLUGINS_FOLDER));
+});
+
+gulp.task('uninstall-root', ['prepare-manifest'], function(){
+    function normalizePluginFileName(name) {
+        return name;
+    }
+    var name = normalizePluginFileName(currentManifest.bundleName || currentManifest.name)+'.sketchplugin';
+    return del([__dirname + '/' + name], { force: true });
+});
+
+gulp.task('install-root', ['uninstall-root'], function(){
+    return gulp.src(["dist/**/*.*", "dist/**/*"])
+        .pipe(gulp.dest(__dirname));
 });
 
 gulp.task('build',function(callback) {

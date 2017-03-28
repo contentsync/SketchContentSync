@@ -1,0 +1,69 @@
+{
+  "name": "SketchContentSync",
+  "bundleName": "SketchContentSync",
+  "description": "Abstract, version, and translate your design content. Sync to Google Documents and more.",
+  "author": "Syncify",
+  "authorEmail": "support@contentsync.io",
+  "version": "2.2.0",
+  "identifier": "com.syncify.sketch.contentsync",
+  "compatibleVersion": "3.7",
+  "repository": {
+    "url": "https://github.com/contentsync/SketchContentSync"
+  },
+  "menu": {
+    "title": "Toggle ContentSync",
+    "isRoot": true,
+    "items": [
+      "commandTogglePanels"
+    ]
+  },
+  "commands": [
+    {
+      "script": "plugin.js",
+      "identifier": "commandPull",
+      "handler": "___commandPull_run_handler_"
+    },
+    {
+      "script": "plugin.js",
+      "identifier": "commandPush",
+      "handler": "___commandPush_run_handler_"
+    },
+    {
+      "script": "plugin.js",
+      "identifier": "commandGetFileName",
+      "handler": "___commandGetFileName_run_handler_"
+    },
+    {
+      "script": "plugin.js",
+      "identifier": "commandOpenOSXApp",
+      "handler": "___commandOpenOsxApp_run_handler_"
+    },
+    {
+      "script": "plugin.js",
+      "name": "Toggle ContentSync",
+      "shortcut": "cmd =",
+      "identifier": "commandTogglePanels",
+      "handler": "___commandTogglePanels_run_handler_"
+    },
+    {
+      "script": "plugin.js",
+      "identifier": "listenerOnStartup",
+      "handler": "___listenerOnStartup_run_handler_"
+    },
+    {
+      "script": "plugin.js",
+      "identifier": "listenerOnDocumentOpen",
+      "handler": "___listenerOnDocumentOpen_run_handler_"
+    },
+    {
+      "script": "plugin.js",
+      "handlers": {
+        "actions": {
+          "Startup": "___listenerOnStartup_run_handler_",
+          "OpenDocument": "___listenerOnDocumentOpen_run_handler_"
+        }
+      }
+    }
+  ],
+  "disableCocoaScriptPreprocessor": true
+}
