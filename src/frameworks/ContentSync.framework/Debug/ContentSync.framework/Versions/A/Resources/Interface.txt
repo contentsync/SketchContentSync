@@ -4,6 +4,7 @@
 -[ContentSyncPanelManager getFileName]
 -[ContentSyncPanelManager pull]
 -[ContentSyncPanelManager push]
+-[ContentSyncPanelManager togglePanels]
 
 -[ContentSyncPanelManager onStartup]
 -[ContentSyncPanelManager onOpenDocument]

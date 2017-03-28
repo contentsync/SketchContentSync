@@ -14,7 +14,7 @@ export const SketchContentSyncExtension = {
   description: 'Abstract, version, and translate your design content. Sync to Google Documents and more.',
   author: 'Syncify',
   authorEmail: 'support@contentsync.io',
-  version: '2.1.0',
+  version: '2.2.0',
   identifier: 'com.syncify.sketch.contentsync',
   compatibleVersion: '3.7',
   repository: {
@@ -24,7 +24,7 @@ export const SketchContentSyncExtension = {
     "title":"Toggle ContentSync",
     "isRoot":true,
     "items":[
-      "commandOpenOSXApp"
+      "commandTogglePanels"
     ]
   },
   commands: {
@@ -38,9 +38,12 @@ export const SketchContentSyncExtension = {
       run: commands.getFileName
     },
     commandOpenOSXApp: {
+      run: commands.openOSXApp
+    },
+    commandTogglePanels: {
       name: 'Toggle ContentSync',
       shortcut: 'cmd =',
-      run: commands.openOSXApp
+      run: commands.togglePanels
     },
     listenerOnStartup: {
       run: listeners.onStartup
