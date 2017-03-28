@@ -7,11 +7,23 @@ ContentSync Sketch Plugin.
 Abstract, version, and translate your Sketch.app design content. Sync to Google Documents and more.
 
 
-## Downloading & ContentSync Platform
+## Getting Started
+
+### ContentSync Platform
+
+We require an account to allow ContentSync to integrate with your Google Documents and more. Don't worry, we only require access to documents we create so all your other documents remain secure and private.
 
 Register for free at [www.contentsync.io](http://contentsync.io/) and get started easily.
 
-Download plugin [here](./packaged/SketchContentSync.zip). Open zip file and double click on the .sketchplugin file.
+### SketchContentSync Plugin
+
+[![Install SketchContentSync with Sketchpacks](http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png "Install SketchContentSync with Sketchpacks")](https://sketchpacks.com/contentsync/SketchContentSync/install)
+
+Or install manually:
+
++ Download plugin [here](./packaged/SketchContentSync.zip)
++ Open zip file
++ Double click on the .sketchplugin file.
 
 # Overview
 

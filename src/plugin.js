@@ -14,7 +14,7 @@ export const SketchContentSyncExtension = {
   description: 'Abstract, version, and translate your design content. Sync to Google Documents and more.',
   author: 'Syncify',
   authorEmail: 'support@contentsync.io',
-  version: '2.2.0',
+  version: '2.2.1',
   identifier: 'com.syncify.sketch.contentsync',
   compatibleVersion: '3.7',
   repository: {
