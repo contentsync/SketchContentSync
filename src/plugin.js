@@ -6,6 +6,7 @@
 
 
 import * as commands from './commands'
+import * as listeners from './listeners'
 
 export const SketchContentSyncExtension = {
   name: 'SketchContentSync',
@@ -40,6 +41,20 @@ export const SketchContentSyncExtension = {
       name: 'Toggle ContentSync',
       shortcut: 'cmd =',
       run: commands.openOSXApp
+    },
+    listenerOnStartup: {
+      run: listeners.onStartup
+    },
+    listenerOnDocumentOpen: {
+      run: listeners.onDocumentOpen
+    },
+    startUp: {
+      handlers: {
+        actions: {
+          "Startup": "___listenerOnStartup_run_handler_",
+          "OpenDocument": "___listenerOnDocumentOpen_run_handler_"
+        }
+      }
     }
   }
 }

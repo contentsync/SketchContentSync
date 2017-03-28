@@ -10,7 +10,6 @@ import * as FrameworkManager from '../library/framework_manager'
 export default (context) => {
   Context(context)
   FrameworkManager.loadContentSyncFramework();
-  let main = ContentSyncPanelManager.alloc().init();
-  let response = main.openOSXApp();
-  log(response);
+  let main = ContentSyncPanelManager.sharedManager();
+  let response = main.onOpenDocument();
 }

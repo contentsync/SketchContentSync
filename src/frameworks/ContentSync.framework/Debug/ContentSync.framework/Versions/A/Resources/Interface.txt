@@ -1,5 +1,9 @@
--[ContentSyncPanelManager helloText]
++[ContentSyncPanelManager sharedManager]
+
 -[ContentSyncPanelManager openOSXApp]
 -[ContentSyncPanelManager getFileName]
 -[ContentSyncPanelManager pull]
 -[ContentSyncPanelManager push]
+
+-[ContentSyncPanelManager onStartup]
+-[ContentSyncPanelManager onOpenDocument]
