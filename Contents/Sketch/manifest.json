@@ -8,7 +8,7 @@
   "identifier": "com.syncify.sketch.contentsync",
   "compatibleVersion": "3.7",
   "repository": {
-    "url": "https://github.com/contentsync/SketchContentSync"
+    "url": "https://github.com/contentsync/SketchContentSync.sketchplugin"
   },
   "menu": {
     "title": "Toggle ContentSync",
