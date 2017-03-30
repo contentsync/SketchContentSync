@@ -14,7 +14,7 @@ export const SketchContentSyncExtension = {
   description: 'Abstract, version, and translate your design content. Sync to Google Documents and more.',
   author: 'Syncify',
   authorEmail: 'support@contentsync.io',
-  version: '2.2.1',
+  version: '2.3.0',
   identifier: 'com.syncify.sketch.contentsync',
   compatibleVersion: '3.7',
   repository: {
@@ -51,11 +51,15 @@ export const SketchContentSyncExtension = {
     listenerOnDocumentOpen: {
       run: listeners.onDocumentOpen
     },
+    listenerOnSelectionChanged: {
+      run: listeners.onSelectionChanged
+    },
     startUp: {
       handlers: {
         actions: {
           "Startup": "___listenerOnStartup_run_handler_",
-          "OpenDocument": "___listenerOnDocumentOpen_run_handler_"
+          "OpenDocument": "___listenerOnDocumentOpen_run_handler_",
+          "SelectionChanged.finish": "___listenerOnSelectionChanged_run_handler_"
         }
       }
     }

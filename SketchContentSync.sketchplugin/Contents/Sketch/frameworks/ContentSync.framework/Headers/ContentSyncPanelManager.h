@@ -27,5 +27,6 @@
 // Listeners
 - (NSString*)onStartup;
 - (NSString*)onOpenDocument;
+- (NSString*)onSelectionChanged;
 
 @end
