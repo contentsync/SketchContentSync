@@ -4,7 +4,7 @@
   "description": "Abstract, version, and translate your design content. Sync to Google Documents and more.",
   "author": "Syncify",
   "authorEmail": "support@contentsync.io",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "identifier": "com.syncify.sketch.contentsync",
   "compatibleVersion": "3.7",
   "repository": {
@@ -18,26 +18,6 @@
     ]
   },
   "commands": [
-    {
-      "script": "plugin.js",
-      "identifier": "commandPull",
-      "handler": "___commandPull_run_handler_"
-    },
-    {
-      "script": "plugin.js",
-      "identifier": "commandPush",
-      "handler": "___commandPush_run_handler_"
-    },
-    {
-      "script": "plugin.js",
-      "identifier": "commandGetFileName",
-      "handler": "___commandGetFileName_run_handler_"
-    },
-    {
-      "script": "plugin.js",
-      "identifier": "commandOpenOSXApp",
-      "handler": "___commandOpenOsxApp_run_handler_"
-    },
     {
       "script": "plugin.js",
       "name": "Toggle ContentSync",
@@ -62,8 +42,14 @@
     },
     {
       "script": "plugin.js",
+      "identifier": "listenerLogger",
+      "handler": "___listenerLogger_run_handler_"
+    },
+    {
+      "script": "plugin.js",
       "handlers": {
         "actions": {
+          "*": "___listenerLogger_run_handler_",
           "Startup": "___listenerOnStartup_run_handler_",
           "OpenDocument": "___listenerOnDocumentOpen_run_handler_",
           "SelectionChanged.finish": "___listenerOnSelectionChanged_run_handler_"

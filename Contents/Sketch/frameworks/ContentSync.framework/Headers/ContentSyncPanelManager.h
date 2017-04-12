@@ -9,8 +9,6 @@
 #import "Globals.h"
 #import "Listeners/ContentSyncListener.h"
 #import "Interface/Interface.h"
-#import "Commands/CommandGetFileName.h"
-#import "Commands/CommandOpenOSX.h"
 #import "Commands/CommandPush.h"
 #import "Commands/CommandPull.h"
 
@@ -18,11 +16,7 @@
 
 + (ContentSyncPanelManager*)sharedManager;
 
-// Commands
-- (NSString*)openOSXApp;
-- (NSString*)getFileName;
-- (NSString*)pull;
-- (NSString*)push;
+- (NSString*)togglePanels;
 
 // Listeners
 - (NSString*)onStartup;
