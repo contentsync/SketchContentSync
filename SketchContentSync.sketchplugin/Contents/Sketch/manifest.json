@@ -4,7 +4,7 @@
   "description": "Abstract, version, and translate your design content. Sync to Google Documents and more.",
   "author": "Syncify",
   "authorEmail": "support@contentsync.io",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "identifier": "com.syncify.sketch.contentsync",
   "compatibleVersion": "3.7",
   "repository": {
@@ -21,7 +21,7 @@
     {
       "script": "plugin.js",
       "name": "Toggle ContentSync",
-      "shortcut": "cmd =",
+      "shortcut": "cmd [",
       "identifier": "commandTogglePanels",
       "handler": "___commandTogglePanels_run_handler_"
     },
