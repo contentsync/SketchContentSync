@@ -17,11 +17,11 @@ Register for free at [www.contentsync.io](http://contentsync.io/) and get starte
 
 ### SketchContentSync Plugin
 
-[![Install SketchContentSync with Sketchpacks](http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png "Install SketchContentSync with Sketchpacks")](https://sketchpacks.com/contentsync/SketchContentSync/install)
+[![Install SketchContentSync with Sketchpacks](http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png "Install SketchContentSync with Sketchpacks")](https://sketchpacks.com/contentsync/SketchContentSync.sketchplugin/install)
 
 Or install manually:
 
-+ Download plugin [here](./packaged/SketchContentSync.zip)
++ Download plugin [here](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/packaged/SketchContentSync.zip)
 + Open zip file
 + Double click on the .sketchplugin file.
 
@@ -29,11 +29,11 @@ Or install manually:
 
 ## Pull Data From Google Spreadsheets into Sketch.app
 
-![PUSH](./docs/contentsyncapp/feature_pull.jpg)
+![PUSH](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/docs/contentsyncapp/feature_pull.jpg)
 
 ## Push Data From Sketch.app into Google Spreadsheets
 
-![PUSH](./docs/contentsyncapp/feature_push.jpg)
+![PUSH](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/docs/contentsyncapp/feature_push.jpg)
 
 
 # Interface Flow
@@ -42,19 +42,19 @@ SketchContentSync works by integrating this plugin with the ContentSync.app.
 
 ### ContentSync.app
 
-![Welcome](./docs/contentsyncapp/welcome_sign_in.png)
+![Welcome](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/docs/contentsyncapp/welcome_sign_in.png)
 
 ### Create Projects
 
-![Create Project](./docs/contentsyncapp/create_project.png)
+![Create Project](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/docs/contentsyncapp/create_project.png)
 
 ### Link To Google Document
 
-![Create Project](./docs/contentsyncapp/create_google_doc.png)
+![Create Project](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/docs/contentsyncapp/create_google_doc.png)
 
 ### Main Project Menu
 
-![Create Project](./docs/contentsyncapp/actions.png)
+![Create Project](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/docs/contentsyncapp/actions.png)
 
 ## Pushing Data
 
@@ -62,15 +62,15 @@ Pushing data allows you to create a new version of data in your spreadsheet. Thi
 
 Takes a regular Sketch design...
 
-![PUSH](./docs/contentsyncapp/push_sketch_before.png)
+![PUSH](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/docs/contentsyncapp/push_sketch_before.png)
 
 Prompts which fields to push and which version to push to...
 
-![PUSH](./docs/contentsyncapp/push.png)
+![PUSH](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/docs/contentsyncapp/push.png)
 
 You can push to a new version or overwrite an existing one.
 
-![After Push](./docs/contentsyncapp/push_sheet.png)
+![After Push](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/docs/contentsyncapp/push_sheet.png)
 
 
 ## Pulling Data
@@ -79,15 +79,15 @@ Pulling data allows you to update you Sketch design from your Google spreadsheet
 
 ### Take version from your spreadsheet:
 
-![PUSH](./docs/contentsyncapp/pull_sheet.png)
+![PUSH](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/docs/contentsyncapp/pull_sheet.png)
 
 ### Prompts which version to pull from...
 
-![PUSH](./docs/contentsyncapp/pull.png)
+![PUSH](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/docs/contentsyncapp/pull.png)
 
 ### Updates your sketch file...
 
-![After Push](./docs/contentsyncapp/pull_sketch_after.png)
+![After Push](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/docs/contentsyncapp/pull_sketch_after.png)
 
 # Support / Bugs / Feature Requests
 
