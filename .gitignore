@@ -10,6 +10,14 @@ src/custom-presets
 
 src/frameworks/ContentSync.framework/ContentSync.build
 
+Contents/Sketch/frameworks/ContentSync.framework/ContentSync.js
+Contents/Sketch/frameworks/ContentSync.framework/Images.xcassets/
+Contents/Sketch/frameworks/ContentSync.framework/Versions/
+
+SketchContentSync.sketchplugin/Contents/Sketch/frameworks/ContentSync.framework/ContentSync.js
+SketchContentSync.sketchplugin/Contents/Sketch/frameworks/ContentSync.framework/Images.xcassets/
+SketchContentSync.sketchplugin/Contents/Sketch/frameworks/ContentSync.framework/Versions/
+
 release.sh
 
 
