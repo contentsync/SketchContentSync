@@ -1,6 +1,6 @@
 [![GitHub version](https://badge.fury.io/gh/contentsync%2FSketchContentSync.svg)](https://badge.fury.io/gh/contentsync%2FSketchContentSync.sketchplugin)
 
-# SketchContentSync 2.4.6
+# SketchContentSync 2.4.7
 
 ContentSync Sketch Plugin.
 
@@ -21,7 +21,7 @@ Register for free at [www.contentsync.io](http://contentsync.io/) and get starte
 
 Or install manually:
 
-+ Download plugin [here](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/SketchContentSync-2.4.6.zip)
++ Download plugin [here](https://github.com/contentsync/SketchContentSync.sketchplugin/blob/master/SketchContentSync-2.4.7.zip)
 + Open zip file
 + Double click on the .sketchplugin file.
 
