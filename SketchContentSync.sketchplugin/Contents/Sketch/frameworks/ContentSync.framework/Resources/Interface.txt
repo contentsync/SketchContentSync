@@ -1,7 +1,0 @@
-+[ContentSyncPanelManager sharedManager]
-
--[ContentSyncPanelManager togglePanels]
-
--[ContentSyncPanelManager onStartup]
--[ContentSyncPanelManager onOpenDocument]
--[ContentSyncPanelManager onSelectionChanged]
