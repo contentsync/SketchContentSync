@@ -3,7 +3,7 @@
   "description": "Abstract, version, and translate your design content. Sync to Google Documents and more.",
   "author": "Syncify",
   "website": "https://www.contentsync.com",
-  "version": "2.4.7",
+  "version": "3.0.0",
   "identifier": "com.syncify.sketch.contentsync",
   "appcast": "https://cast.appcastify.com/contentsync/contentsync.xml",
   "compatibleVersion": "3.7",
@@ -35,18 +35,8 @@
     },
     {
       "script": "plugin.js",
-      "identifier": "listenerOnDocumentOpen",
-      "handler": "___listenerOnDocumentOpen_run_handler_"
-    },
-    {
-      "script": "plugin.js",
-      "identifier": "listenerOnSelectionChanged",
-      "handler": "___listenerOnSelectionChanged_run_handler_"
-    },
-    {
-      "script": "plugin.js",
-      "identifier": "listenerLogger",
-      "handler": "___listenerLogger_run_handler_"
+      "identifier": "listenerOnShutdown",
+      "handler": "___listenerOnShutdown_run_handler_"
     },
     {
       "script": "plugin.js",
@@ -54,6 +44,7 @@
         "actions": {
           "*": "___listenerLogger_run_handler_",
           "Startup": "___listenerOnStartup_run_handler_",
+          "Shutdown": "___listenerOnShutdown_run_handler_",
           "OpenDocument": "___listenerOnDocumentOpen_run_handler_",
           "SelectionChanged.finish": "___listenerOnSelectionChanged_run_handler_"
         }

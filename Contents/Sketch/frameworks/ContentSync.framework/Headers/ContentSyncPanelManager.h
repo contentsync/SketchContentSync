@@ -7,20 +7,19 @@
 //
 
 #import "Globals.h"
-#import "Listeners/ContentSyncListener.h"
-#import "Interface/Interface.h"
-#import "Commands/CommandPush.h"
-#import "Commands/CommandPull.h"
+#import "CSDocumentState.h"
+#import "CSLogger.h"
+#import "NotificationListeners/MSDocumentWindowNotificationListener.h"
+#import "NotificationListeners/AllNotificationsListener.h"
+
+NSString* const globalnotificationID;
 
 @interface ContentSyncPanelManager : NSObject
 
 + (ContentSyncPanelManager*)sharedManager;
 
-- (NSString*)togglePanels;
-
-// Listeners
-- (NSString*)onStartup;
-- (NSString*)onOpenDocument;
-- (NSString*)onSelectionChanged;
+- (NSString*)toggleContentSync;
+- (NSString*)loadContentSync;
+- (NSString*)unloadContentSync;
 
 @end
