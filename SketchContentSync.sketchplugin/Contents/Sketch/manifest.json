@@ -60,11 +60,8 @@
       "script": "plugin.js",
       "handlers": {
         "actions": {
-          "*": "___listenerLogger_run_handler_",
           "Startup": "___listenerOnStartup_run_handler_",
-          "Shutdown": "___listenerOnShutdown_run_handler_",
-          "OpenDocument": "___listenerOnDocumentOpen_run_handler_",
-          "SelectionChanged.finish": "___listenerOnSelectionChanged_run_handler_"
+          "Shutdown": "___listenerOnShutdown_run_handler_"
         }
       }
     }
