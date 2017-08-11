@@ -2,8 +2,8 @@
   "name": "SketchContentSync",
   "description": "Abstract, version, and translate your design content. Sync to Google Documents and more.",
   "author": "Syncify",
-  "website": "https://www.contentsync.com",
-  "version": "3.0.0",
+  "website": "https://www.contentsync.io",
+  "version": "3.0.2",
   "identifier": "com.syncify.sketch.contentsync",
   "appcast": "https://cast.appcastify.com/contentsync/contentsync.xml",
   "compatibleVersion": "3.7",
@@ -11,13 +11,15 @@
   "bundleName": "SketchContentSync",
   "authorEmail": "support@contentsync.io",
   "repository": {
-    "url": "https://github.com/contentsync/SketchContentSync.sketchplugin"
+    "url": "https://github.com/contentsync/SketchContentSync"
   },
   "menu": {
     "title": "Toggle ContentSync",
-    "isRoot": true,
     "items": [
-      "commandTogglePanels"
+      "commandTogglePanels",
+      "-",
+      "actionPush",
+      "actionPull"
     ]
   },
   "commands": [
@@ -27,6 +29,22 @@
       "shortcut": "cmd [",
       "identifier": "commandTogglePanels",
       "handler": "___commandTogglePanels_run_handler_"
+    },
+    {
+      "script": "plugin.js",
+      "description": "Push version to ContentSync",
+      "icon": "icons/icon_action_push.png",
+      "name": "Push ContentSync Version",
+      "identifier": "actionPush",
+      "handler": "___actionPush_run_handler_"
+    },
+    {
+      "script": "plugin.js",
+      "description": "Pull version from ContentSync",
+      "icon": "icons/icon_action_pull.png",
+      "name": "Pull ContentSync Version",
+      "identifier": "actionPull",
+      "handler": "___actionPull_run_handler_"
     },
     {
       "script": "plugin.js",

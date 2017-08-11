@@ -22,4 +22,7 @@ NSString* const globalnotificationID;
 - (NSString*)loadContentSync;
 - (NSString*)unloadContentSync;
 
+- (NSString*)actionPush;
+- (NSString*)actionPull;
+
 @end
