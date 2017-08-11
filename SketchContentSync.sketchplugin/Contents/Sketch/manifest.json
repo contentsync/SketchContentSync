@@ -2,8 +2,8 @@
   "name": "SketchContentSync",
   "description": "Abstract, version, and translate your design content. Sync to Google Documents and more.",
   "author": "Syncify",
-  "website": "https://www.contentsync.io",
-  "version": "3.0.2",
+  "website": "https://www.contentsync.com",
+  "version": "3.0.3",
   "identifier": "com.syncify.sketch.contentsync",
   "appcast": "https://cast.appcastify.com/contentsync/contentsync.xml",
   "compatibleVersion": "3.7",
@@ -11,7 +11,7 @@
   "bundleName": "SketchContentSync",
   "authorEmail": "support@contentsync.io",
   "repository": {
-    "url": "https://github.com/contentsync/SketchContentSync"
+    "url": "https://github.com/contentsync/SketchContentSync.sketchplugin"
   },
   "menu": {
     "title": "Toggle ContentSync",

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="global.css">
+
+    <script src="bower_components/angular/angular.min.js"></script>
+</head>
+<body>
+
+<div>
+    <div id="header">Welcome to ContentSync.</div>
+    <div id="counter"></div>
+    <div>
+        <button id="loginbutton">Log In</button>
+    </div>
+</div>
+
+<script>
+
+var loginbutton = document.getElementById("loginbutton");
+
+loginbutton.onclick = function(){
+    window.CSFrameworkJSCallbacks.openlogin();
+};
+
+var count = 0;
+function updateCount(){
+    count += 1;
+    var counter = document.getElementById("counter");
+    counter.innerHTML = "" + count;
+
+    window.CSFrameworkJSCallbacks.callback();
+}
+
+updateCount();
+
+</script>
+</body>
+</html>
