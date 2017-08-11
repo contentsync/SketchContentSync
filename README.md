@@ -18,13 +18,10 @@ Register for free at [www.contentsync.io](http://contentsync.io/) and get starte
 
 # SketchContentSync Plugin
 
-## Install with Sketchpacks
-[![Install SketchContentSync with Sketchpacks](http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png "Install SketchContentSync with Sketchpacks")](https://sketchpacks.com/contentsync/SketchContentSync.sketchplugin/install)
-
 ## Install Manually
-+ Download plugin [here](./SketchContentSync-3.0.3.zip)
++ [Download plugin here](https://s3-us-west-2.amazonaws.com/contentsync-sketch-releases/SketchContentSync-latest-stable.zip)
 + Open zip file
-+ Double click on the .sketchplugin file.
++ Double click on the SketchContentSync.sketchplugin file.
 
 # Overview
 
