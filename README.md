@@ -4,7 +4,7 @@ Abstract, version, and translate your Sketch.app design content.
 
 
 
-# SketchContentSync 3.0.3
+# SketchContentSync 3.0.4
 
 Sync to Google Documents and more. **Directly from within Sketch.**
 ![PUSH](./docs/contentsyncapp/screen_push.png)
@@ -18,10 +18,16 @@ Register for free at [www.contentsync.io](http://contentsync.io/) and get starte
 
 # SketchContentSync Plugin
 
+## Install with Sketch Runner
+** Coming Soon **
+
+## Install with Sketchpacks
+** Coming Soon **
+
 ## Install Manually
 + [Download plugin here](https://s3-us-west-2.amazonaws.com/contentsync-sketch-releases/SketchContentSync-latest-stable.zip)
 + Open zip file
-+ Double click on the SketchContentSync.sketchplugin file.
++ Double click on the .sketchplugin file.
 
 # Overview
 
