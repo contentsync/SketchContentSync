@@ -1,7 +1,6 @@
 node_modules/
 .DS_Store
 build/
-dist/
 
 src/custom-presets
 .DB_Store
@@ -11,5 +10,3 @@ src/custom-presets
 src/frameworks/ContentSync.framework/ContentSync.build
 
 release.sh
-
-
