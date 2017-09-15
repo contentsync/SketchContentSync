@@ -19,7 +19,9 @@ Register for free at [www.contentsync.io](http://contentsync.io/) and get starte
 # SketchContentSync Plugin
 
 ## Install with Sketch Runner
-** Coming Soon **
+With Sketch Runner, just go to the `install` command and search for `SketchContentSync`. Runner allows you to manage plugins and do much more to speed up your workflow in Sketch. [Download Runner here](http://www.sketchrunner.com).
+
+![Sketch Runner screenshot](./docs/contentsyncapp/sketchrunner_install.png)
 
 ## Install with Sketchpacks
 ** Coming Soon **
