@@ -4,7 +4,7 @@ Abstract, version, and translate your Sketch.app design content.
 
 
 
-# SketchContentSync 3.0.6
+# SketchContentSync 3.1.0
 
 Sync to Google Documents and more. **Directly from within Sketch.**
 ![PUSH](./docs/contentsyncapp/screen_push.png)

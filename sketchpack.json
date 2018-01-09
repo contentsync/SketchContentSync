@@ -2,5 +2,5 @@
     "name": "Sketch Content Sync",
     "description": "Sketch app plugin for synchronizing text content and styles to and from Google Documents.",
     "tags": ["content", "data", "synchronizing", "google", "documents", "styles", "abstract", "version", "iteration"],
-    "version": "3.0.6"
+    "version": "3.1.0"
 }

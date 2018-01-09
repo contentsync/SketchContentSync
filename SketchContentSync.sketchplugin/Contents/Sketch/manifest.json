@@ -3,7 +3,7 @@
   "description": "Abstract, version, and translate your design content. Sync to Google Documents and more.",
   "author": "Syncify",
   "website": "https://www.contentsync.com",
-  "version": "3.0.6",
+  "version": "3.1.0",
   "identifier": "com.syncify.sketch.contentsync",
   "appcast": "https://cast.appcastify.com/contentsync/contentsync.xml",
   "compatibleVersion": "3.7",
