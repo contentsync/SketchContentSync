@@ -3,7 +3,7 @@ Abstract, version, and translate your Sketch.app design content.
 [![GitHub version](https://badge.fury.io/gh/contentsync%2FSketchContentSync.svg)](https://badge.fury.io/gh/contentsync%2FSketchContentSync.sketchplugin)
 
 
-# SketchContentSync 4
+# SketchContentSync 4.2
 
 Sync to Google Documents and more. **Directly from within Sketch.**
 
