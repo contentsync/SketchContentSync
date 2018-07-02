@@ -1,7 +1,6 @@
 Abstract, version, and translate your Sketch.app design content.
 
-[![GitHub version](https://badge.fury.io/gh/contentsync%2FSketchContentSync.svg)](https://badge.fury.io/gh/contentsync%2FSketchContentSync.sketchplugin)
-
+Check out our new **[ContentSync Desktop App](https://github.com/contentsync/contentsync-desktop)** too!
 
 # SketchContentSync 4.2
 
