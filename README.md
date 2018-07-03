@@ -2,7 +2,7 @@ Abstract, version, and translate your Sketch.app design content.
 
 Check out our new **[ContentSync Desktop App](https://github.com/contentsync/contentsync-desktop)** too!
 
-# SketchContentSync 4.2
+# SketchContentSync 4.2.1
 
 Sync to Google Documents and more. **Directly from within Sketch.**
 
@@ -34,3 +34,10 @@ With Sketch Runner, just go to the `install` command and search for `SketchConte
 ## Support / Bugs / Feature Requests
 
 Create a github issue or contact [support@contentsync.io](mailto:support@contentsync.io).
+
+### Changelog
+
+#### 4.2.1
+
++ Fixes positioning of embedded layers in groups for ContentSync Desktop
++ Fixes issues syncing when symbol instance has image override
