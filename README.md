@@ -40,6 +40,7 @@ Create a github issue or contact [support@contentsync.io](mailto:support@content
 #### 4.2.3
 
 + [#77](https://github.com/contentsync/SketchContentSync/issues/77) Fixes version dropdown updates when versions removed
++ [#76](https://github.com/contentsync/SketchContentSync/issues/76) Supports Sketch Midnight theming
 + Improves speed of push
 
 #### 4.2.2
