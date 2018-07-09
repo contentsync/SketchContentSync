@@ -2,7 +2,7 @@ Abstract, version, and translate your Sketch.app design content.
 
 Check out our new **[ContentSync Desktop App](https://github.com/contentsync/contentsync-desktop)** too!
 
-# SketchContentSync 4.2.2
+# SketchContentSync 4.2.3
 
 Sync to Google Documents and more. **Directly from within Sketch.**
 
@@ -36,6 +36,11 @@ With Sketch Runner, just go to the `install` command and search for `SketchConte
 Create a github issue or contact [support@contentsync.io](mailto:support@contentsync.io).
 
 ### Changelog
+
+#### 4.2.3
+
++ [#77](https://github.com/contentsync/SketchContentSync/issues/77) Fixes version dropdown updates when versions removed
++ Improves speed of push
 
 #### 4.2.2
 
