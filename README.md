@@ -2,7 +2,7 @@ Abstract, version, and translate your Sketch.app design content.
 
 Check out our new **[ContentSync Desktop App](https://github.com/contentsync/contentsync-desktop)** too!
 
-# SketchContentSync 4.2.4
+# SketchContentSync 4.2.5
 
 Sync to Google Documents and more. **Directly from within Sketch.**
 
@@ -36,6 +36,12 @@ With Sketch Runner, just go to the `install` command and search for `SketchConte
 Create a github issue or contact [support@contentsync.io](mailto:support@contentsync.io).
 
 ### Changelog
+
+#### 4.2.5
++ Fixes issues when pushing library symbols
++ Fixes positioning and sizing of text layers on exported artboards for ContentSync Desktop
++ Fixes ignoring hidden layers for artboart exporting for ContentSync Desktop
++ Ignored artboards with no text layers for ContentSync Desktop
 
 #### 4.2.4
 + [#79](https://github.com/contentsync/SketchContentSync/issues/79) Fixes manifest version for updates
