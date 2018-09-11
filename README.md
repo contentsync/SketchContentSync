@@ -2,7 +2,7 @@ Abstract, version, and translate your Sketch.app design content.
 
 Check out our new **[ContentSync Desktop App](https://github.com/contentsync/contentsync-desktop)** too!
 
-# SketchContentSync 4.2.5
+# SketchContentSync 4.2.11
 
 Sync to Google Documents and more. **Directly from within Sketch.**
 
@@ -36,6 +36,13 @@ With Sketch Runner, just go to the `install` command and search for `SketchConte
 Create a github issue or contact [support@contentsync.io](mailto:support@contentsync.io).
 
 ### Changelog
+
+#### 4.2.11
++ Updates build for better formatting and automatic version recogition
++ Fix layer/symbol position and sizing for Desktop (and soon to come new platform)
++ Fix isNull bug when syncing with styles enabled
++ Fix to ensure project settings are updated before commands are run
++ Improved error reporting and displaying
 
 #### 4.2.5
 + Fixes issues when pushing library symbols
