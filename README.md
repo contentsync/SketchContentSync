@@ -2,7 +2,7 @@ Abstract, version, and translate your Sketch.app design content.
 
 Check out our new **[ContentSync Desktop App](https://github.com/contentsync/contentsync-desktop)** too!
 
-# SketchContentSync 4.2.13
+# SketchContentSync 4.2.14
 
 Sync to Google Documents and more. **Directly from within Sketch.**
 
@@ -36,6 +36,9 @@ With Sketch Runner, just go to the `install` command and search for `SketchConte
 Create a github issue or contact [support@contentsync.io](mailto:support@contentsync.io).
 
 ### Changelog
+
+#### 4.2.14
++ Updates for Sketch 52
 
 #### 4.2.13
 + Fix override parsing bug that would result in [NSInvalidArgumentException: NSDictionaryM isNull] errors.
