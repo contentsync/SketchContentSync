@@ -2,7 +2,7 @@ Abstract, version, and translate your Sketch.app design content.
 
 Check out our new **[ContentSync Desktop App](https://github.com/contentsync/contentsync-desktop)** too!
 
-# SketchContentSync 5
+# SketchContentSync 5.1
 
 Sync to Google Documents and more. **Directly from within Sketch.**
 
@@ -36,6 +36,10 @@ With Sketch Runner, just go to the `install` command and search for `SketchConte
 Create a github issue or contact [support@contentsync.io](mailto:support@contentsync.io).
 
 ### Changelog
+
+#### 5.1
++ Updates UI to match Sketch 52
++ Adds keyboard shortcut for disabling & enabling ContentSync on layers
 
 #### 5
 + Supports Sketch 52

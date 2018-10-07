@@ -30,5 +30,8 @@ FOUNDATION_EXPORT const unsigned char ContentSyncRealtimeVersionString[];
 + (void)actionPull:(MSDocument*)doc;
 + (void)actionPreferences:(MSDocument*)doc;
 
++ (void)actionSelectedLayersDisable:(MSDocument*)doc;
++ (void)actionSelectedLayersEnable:(MSDocument*)doc;
+
 @end
 

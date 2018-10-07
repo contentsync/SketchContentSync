@@ -4,7 +4,7 @@
   "author": "Syncify",
   "website": "https://www.contentsync.io",
   "homepage": "https://www.contentsync.io",
-  "version": "5",
+  "version": "5.1",
   "identifier": "com.syncify.sketch.contentsync",
   "appcast": "https://cast.appcastify.com/contentsync/contentsync.xml",
   "compatibleVersion": "3.7",
@@ -15,14 +15,17 @@
     "url": "https://github.com/contentsync/SketchContentSync"
   },
   "menu": {
-    "title": "Toggle ContentSync",
+    "title": "ContentSync",
     "items": [
-      "actionToggleContentSync",
+      "actionPushContentSync",
+      "actionPullContentSync",
+      "-",
+      "actionDisableLayers",
+      "actionEnableLayers",
       "-",
       "actionPreferences",
       "-",
-      "actionPushContentSync",
-      "actionPullContentSync"
+      "actionToggleContentSync"
     ]
   },
   "commands": [
@@ -52,7 +55,7 @@
       "handler": "___actionToggleContentSync_run_handler_",
       "script": "plugin.js",
       "name": "Toggle ContentSync Panel",
-      "shortcut": "cmd ["
+      "shortcut": "ctrl shift ["
     },
     {
       "identifier": "actionPushContentSync",
@@ -72,7 +75,22 @@
       "identifier": "actionPreferences",
       "handler": "___actionPreferences_run_handler_",
       "script": "plugin.js",
+      "shortcut": "ctrl shift ]",
       "name": "Preferences"
+    },
+    {
+      "identifier": "actionDisableLayers",
+      "handler": "___actionDisableLayers_run_handler_",
+      "script": "plugin.js",
+      "name": "Disable Sync on Selected Layers",
+      "shortcut": "ctrl shift o"
+    },
+    {
+      "identifier": "actionEnableLayers",
+      "handler": "___actionEnableLayers_run_handler_",
+      "script": "plugin.js",
+      "name": "Enable Sync on Selected Layers",
+      "shortcut": "ctrl shift i"
     }
   ],
   "disableCocoaScriptPreprocessor": true
