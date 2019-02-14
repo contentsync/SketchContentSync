@@ -1,23 +1,27 @@
-Abstract, version, and translate your Sketch.app design content.
+**Content collaboration for Sketch. Sync copy between Sketch designs and Google Spreadsheets.**
 
-Check out our new **[ContentSync Desktop App](https://github.com/contentsync/contentsync-desktop)** too!
+# SketchContentSync 6.0.1
 
-# SketchContentSync 5.1
-
-Sync to Google Documents and more. **Directly from within Sketch.**
+Sync to Google Documents and more directly from within Sketch.
 
 Visit [www.contentsync.io](http://www.contentsync.io) for more details.
 
-![Plugin Features](./docs/plugin_features.png)
-![Spreadsheets Features](./docs/spreadsheet_features.png)
+### Version Your Sketch Designs
+![Versioning Sketch Design](./docs/ContentSync-6-Demo.gif)
+
+### Manage Content within Google Spreadsheets
+![Editing Google Spredsheet](./docs/ContentSync-6-Demo-Spreadsheet.gif)
+
+### Build Directly into Sketch
+![ContentSync Interface](./docs/sketch-interface-highlighted.png)
 
 ### ContentSync Platform
 
-We require an account to allow ContentSync to integrate with your Google Documents and more. Don't worry, we only require access to documents we create so all your other documents remain secure and private.
+We require an account to allow ContentSync to integrate with your Google Documents and more. **We only require access to documents we create so all your other documents remain secure and private.**
 
 Register for free at [www.contentsync.io](http://www.contentsync.io/) and get started easily.
 
-### SketchContentSync Plugin
+## SketchContentSync Plugin
 
 #### Install with Sketch Runner
 With Sketch Runner, just go to the `install` command and search for `SketchContentSync`. Runner allows you to manage plugins and do much more to speed up your workflow in Sketch. [Download Runner here](http://www.sketchrunner.com).
@@ -36,6 +40,14 @@ With Sketch Runner, just go to the `install` command and search for `SketchConte
 Create a github issue or contact [support@contentsync.io](mailto:support@contentsync.io).
 
 ### Changelog
+
+#### 6
++ Supports Sketch 53
++ New ContentSync UI - Inspector panels and better layer list integration
++ Easier to customize - Inspector panel give you full control
++ Supports symbol swapping - set symbol type key and change symbol types dynamically
++ Supports content fitting - automatically resize symbols to fit content override values
++ Much more! Check out our [full docs](https://www.contentsync.io/docs)
 
 #### 5.1
 + Updates UI to match Sketch 52
