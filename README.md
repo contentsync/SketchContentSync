@@ -1,6 +1,6 @@
 **Content collaboration for Sketch. Sync copy between Sketch designs and Google Spreadsheets.**
 
-# SketchContentSync 6.1.0
+# SketchContentSync 6.1.1
 
 Sync to Google Documents and more directly from within Sketch.
 
@@ -41,7 +41,10 @@ Create a github issue or contact [support@contentsync.io](mailto:support@content
 
 ### Changelog
 
-#### 6.1
+#### 6.1.1
++ Fixes issue when pushing full design on large files
+
+#### 6.1.0
 + Updates UI to improve usability
 + Fixes bug when pulling updates on nested symbols of the same type
 + Fixes bug when updating settings when multiple layers are selected
