@@ -41,6 +41,10 @@ Create a github issue or contact [support@contentsync.io](mailto:support@content
 
 ### Changelog
 
+#### 6.2.0
++ Adds additional project settings for default settings and formats
++ Change symbol type overrides to always be value of referenced symbols. Not blank for default value.
+
 #### 6.1.1
 + Fixes issue when pushing full design on large files
 
