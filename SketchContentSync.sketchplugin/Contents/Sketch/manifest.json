@@ -4,7 +4,7 @@
   "author": "Syncify",
   "website": "https://www.contentsync.io",
   "homepage": "https://www.contentsync.io",
-  "version": "6.1.1",
+  "version": "6.2.0",
   "identifier": "com.syncify.sketch.contentsync",
   "appcast": "https://cast.appcastify.com/contentsync/contentsync6.xml",
   "compatibleVersion": "3.7",
@@ -22,8 +22,6 @@
       "-",
       "actionDisableLayers",
       "actionEnableLayers",
-      "-",
-      "actionPreferences",
       "-",
       "actionToggleContentSync"
     ]
@@ -70,13 +68,6 @@
       "script": "plugin.js",
       "name": "Pull",
       "shortcut": "ctrl shift u"
-    },
-    {
-      "identifier": "actionPreferences",
-      "handler": "___actionPreferences_run_handler_",
-      "script": "plugin.js",
-      "shortcut": "ctrl shift ]",
-      "name": "Preferences"
     },
     {
       "identifier": "actionDisableLayers",
