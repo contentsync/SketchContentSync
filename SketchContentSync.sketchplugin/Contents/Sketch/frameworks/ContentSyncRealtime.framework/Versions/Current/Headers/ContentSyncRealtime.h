@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <ContentSyncRuntime.h>
+#import "NSObject+DumpClassInfo.h"
 
 //! Project version number for ContentSyncRealtime.
 FOUNDATION_EXPORT double ContentSyncRealtimeVersionNumber;
