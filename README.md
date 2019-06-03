@@ -1,6 +1,6 @@
 **Content collaboration for Sketch. Sync copy between Sketch designs and Google Spreadsheets.**
 
-# SketchContentSync 6.3.1
+# SketchContentSync 6.4.0
 
 Sync to Google Documents and more directly from within Sketch.
 
@@ -40,6 +40,14 @@ With Sketch Runner, just go to the `install` command and search for `SketchConte
 Create a github issue or contact [support@contentsync.io](mailto:support@contentsync.io).
 
 ### Changelog
+
+#### 6.4.0
++ New Feature: Supports Microsoft 365 Excel syncing
++ Improvement: Syncing artboards uploads one at a time for better messaging
++ Improvement: Improved error reporting on failed syncs
++ Improvement: Keys used for images wont override spreadsheet key values on push
++ Bug Fix: Fixes crashing in Sketch 55.1
++ Bug Fix: Shows ContentSync icon on image layer icons
 
 #### 6.3.1
 + Bug Fix: Fixes issue when pulling in Sketch 55.
