@@ -1,11 +1,11 @@
 {
   "name": "ContentSync",
   "icon": "plugin_logo.png",
-  "description": "Sync your content to and from Google Spreadsheets. Abstract, version, and translate your design content.",
+  "description": "Sync your content to and from Google Spreadsheets and Microsoft 365 Excel. Abstract, version, and translate your design content.",
   "author": "Syncify",
   "website": "https://www.contentsync.io",
   "homepage": "https://www.contentsync.io",
-  "version": "6.4.0",
+  "version": "6.5.0",
   "identifier": "com.syncify.sketch.contentsync",
   "appcast": "https://cast.appcastify.com/contentsync/contentsync6.xml",
   "compatibleVersion": "3.7",

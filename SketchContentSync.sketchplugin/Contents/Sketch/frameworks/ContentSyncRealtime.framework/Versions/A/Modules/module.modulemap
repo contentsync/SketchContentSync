@@ -1,6 +1,0 @@
-framework module ContentSyncRealtime {
-  umbrella header "ContentSyncRealtime.h"
-
-  export *
-  module * { export * }
-}
