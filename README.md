@@ -43,9 +43,11 @@ Create a github issue or contact [support@contentsync.com](mailto:support@conten
 ### Changelog
 
 #### 6.5.0
-+ Improvement: Supports [Smart Layout](https://www.sketch.com/docs/symbols/smart-layout/) when syncing symbol overrides.
-+ Improvement: New DMG package install supports OSX Catalina security protocols.
++ Improvement: Supports **[Smart Layout](https://www.sketch.com/docs/symbols/smart-layout/)** when syncing symbol overrides.
++ Improvement: New DMG package install **supports OSX Catalina** security protocols.
 + Improvement: Moves API from contentsync.io to contentsync.com
++ Improvement: **Default Key Prefix** - New project setting to prepend keys with Page Name, Artboard Name or both.
++ Improvement: **Default Key Suffix** - New project setting to append object id for uniqueness across layers.
 
 #### 6.4.0
 + New Feature: Supports Microsoft 365 Excel syncing
