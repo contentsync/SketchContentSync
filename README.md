@@ -1,10 +1,10 @@
 **Content collaboration for Sketch. Sync copy between Sketch designs and Google Spreadsheets and Microsoft 365 Exel.**
 
-# SketchContentSync 6.4.0
+# SketchContentSync 6.5.0
 
 Sync content to Google Spreadsheets and Microsoft 365 Excel directly from within Sketch.
 
-Visit [www.contentsync.io](http://www.contentsync.io) for more details.
+Visit [www.contentsync.com](http://www.contentsync.com) for more details.
 
 ### Version Your Sketch Designs
 ![Versioning Sketch Design](./docs/ContentSync-6-Demo.gif)
@@ -19,9 +19,16 @@ Visit [www.contentsync.io](http://www.contentsync.io) for more details.
 
 We require an account to allow ContentSync to integrate with your Google Documents and more. **We only require access to documents we create so all your other documents remain secure and private.**
 
-Register for free at [www.contentsync.io](http://www.contentsync.io/) and get started easily.
+Register for free at [www.contentsync.com](http://www.contentsync.com/) and get started easily.
 
 ## SketchContentSync Plugin
+
+#### Install with DMG
++ [Download plugin here](https://contentsync-plugins.s3.amazonaws.com/sketch/ContentSync_Sketch_latest_stable.dmg)
++ Open DMG file
++ Double click on the SketchContentSync.sketchplugin file.
+![ContentSync DMG](./docs/dmginstall.png)
+
 
 #### Install with Sketch Runner
 With Sketch Runner, just go to the `install` command and search for `SketchContentSync`. Runner allows you to manage plugins and do much more to speed up your workflow in Sketch. [Download Runner here](http://www.sketchrunner.com).
@@ -29,17 +36,16 @@ With Sketch Runner, just go to the `install` command and search for `SketchConte
 ![Sketch Runner screenshot](./docs/sketchrunner.png)
 
 
-#### Install Manually
-+ [Download plugin here](https://s3-us-west-2.amazonaws.com/contentsync-sketch-releases/SketchContentSync-latest-stable.zip)
-+ Open zip file
-+ Double click on the .sketchplugin file.
-
-
 ## Support / Bugs / Feature Requests
 
-Create a github issue or contact [support@contentsync.io](mailto:support@contentsync.io).
+Create a github issue or contact [support@contentsync.com](mailto:support@contentsync.com).
 
 ### Changelog
+
+#### 6.5.0
++ Improvement: Supports [Smart Layout](https://www.sketch.com/docs/symbols/smart-layout/) when syncing symbol overrides.
++ Improvement: New DMG package install supports OSX Catalina security protocols.
++ Improvement: Moves API from contentsync.io to contentsync.com
 
 #### 6.4.0
 + New Feature: Supports Microsoft 365 Excel syncing
@@ -76,7 +82,7 @@ Create a github issue or contact [support@contentsync.io](mailto:support@content
 + Easier to customize - Inspector panel give you full control
 + Supports symbol swapping - set symbol type key and change symbol types dynamically
 + Supports content fitting - automatically resize symbols to fit content override values
-+ Much more! Check out our [full docs](https://www.contentsync.io/docs)
++ Much more! Check out our [full docs](https://www.contentsync.com/docs)
 
 #### 5.1
 + Updates UI to match Sketch 52
