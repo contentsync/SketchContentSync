@@ -1,6 +1,6 @@
 **Content collaboration for Sketch. Sync copy between Sketch designs and Google Spreadsheets and Microsoft 365 Exel.**
 
-# SketchContentSync 6.5.0
+# SketchContentSync 6.5.1
 
 Sync content to Google Spreadsheets and Microsoft 365 Excel directly from within Sketch.
 
@@ -41,6 +41,10 @@ With Sketch Runner, just go to the `install` command and search for `SketchConte
 Create a github issue or contact [support@contentsync.com](mailto:support@contentsync.com).
 
 ### Changelog
+
+#### 6.5.1
++ Bug Fix: Refreshes sidebar after push to make sure panels are up to date
++ Improvement: Only caches content key settings on overrides when content key on override is explicitly set.
 
 #### 6.5.0
 + Improvement: Supports **[Smart Layout](https://www.sketch.com/docs/symbols/smart-layout/)** when syncing symbol overrides.
