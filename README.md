@@ -42,9 +42,9 @@ Create a github issue or contact [support@contentsync.com](mailto:support@conten
 
 ### Changelog
 
-#### 6.5.1
-+ Bug Fix: Fixes Sketch UI would hang on key updates
-+ Improvement: Only caches content key settings on overrides when content key on override is explicitly set.
+#### 6.5.2
++ Bug Fix: Fixes Sketch UI layer selection would sometimes hang
++ New Feature: Allows for default key prefix / suffix
 
 #### 6.5.1
 + Bug Fix: Refreshes sidebar after push to make sure panels are up to date
