@@ -1,6 +1,6 @@
 **Content collaboration for Sketch. Sync copy between Sketch designs and Google Spreadsheets and Microsoft 365 Exel.**
 
-# SketchContentSync 6.5.2
+# SketchContentSync 6.5.3
 
 Sync content to Google Spreadsheets and Microsoft 365 Excel directly from within Sketch.
 
@@ -41,6 +41,10 @@ With Sketch Runner, just go to the `install` command and search for `SketchConte
 Create a github issue or contact [support@contentsync.com](mailto:support@contentsync.com).
 
 ### Changelog
+
+#### 6.5.3
++ New Feature: Using "No Symbol" on a feature override will set the override to no symbol - helpful for smart layouts.
++ Bug Fix: Symbol overrides now update after symbol type override is changed too
 
 #### 6.5.2
 + Bug Fix: Fixes Sketch UI layer selection would sometimes hang
