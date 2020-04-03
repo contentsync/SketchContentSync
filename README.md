@@ -1,6 +1,6 @@
 **Content collaboration for Sketch. Sync copy between Sketch designs and Google Spreadsheets and Microsoft 365 Exel.**
 
-# SketchContentSync 6.5.3
+# SketchContentSync 6.5.4
 
 Sync content to Google Spreadsheets and Microsoft 365 Excel directly from within Sketch.
 
@@ -42,8 +42,8 @@ Create a github issue or contact [support@contentsync.com](mailto:support@conten
 
 ### Changelog
 
-#### 6.5.3
-+ New Feature: Using "No Symbol" on a feature override will set the override to no symbol - helpful for smart layouts.
+#### 6.5.4
++ New Feature: Using "No Symbol" on a symbol override will set the override to no symbol - helpful for smart layouts. Works on push and pull.
 + Bug Fix: Symbol overrides now update after symbol type override is changed too
 
 #### 6.5.2
