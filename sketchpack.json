@@ -2,5 +2,5 @@
     "name": "Sketch Content Sync",
     "description": "Sketch app plugin for synchronizing text content and styles to and from Google Documents and Microsoft 365 Excel.",
     "tags": ["content", "data", "synchronizing", "google", "excel", "cloud", "documents", "styles", "abstract", "version", "iteration"],
-    "version": "7.0.0"
+    "version": "7.0.1"
 }

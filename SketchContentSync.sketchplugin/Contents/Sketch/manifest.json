@@ -5,7 +5,7 @@
   "author": "Syncify",
   "website": "https://www.contentsync.io",
   "homepage": "https://www.contentsync.io",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "identifier": "com.syncify.sketch.contentsync",
   "appcast": "https://cast.appcastify.com/contentsync/contentsync6.xml",
   "compatibleVersion": "3.7",
