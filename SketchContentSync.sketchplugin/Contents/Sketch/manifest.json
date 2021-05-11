@@ -5,10 +5,11 @@
   "author": "Syncify",
   "website": "https://www.contentsync.io",
   "homepage": "https://www.contentsync.io",
-  "version": "7.0.1",
+  "version": "8.1.0",
   "identifier": "com.syncify.sketch.contentsync",
   "appcast": "https://cast.appcastify.com/contentsync/contentsync6.xml",
-  "compatibleVersion": "3.7",
+  "compatibleVersion": "71",
+  "maxCompatibleVersion": "71",
   "bundleVersion": "1",
   "bundleName": "SketchContentSync",
   "authorEmail": "support@contentsync.io",
@@ -39,13 +40,25 @@
       "script": "plugin.js"
     },
     {
+      "identifier": "listenerOpenDocument",
+      "handler": "___listenerOpenDocument_run_handler_",
+      "script": "plugin.js"
+    },
+    {
+      "identifier": "listenerSelectionChanged",
+      "handler": "___listenerSelectionChanged_run_handler_",
+      "script": "plugin.js"
+    },
+    {
       "identifier": "startUp",
       "handler": "___startUp_run_handler_",
       "script": "plugin.js",
       "handlers": {
         "actions": {
           "Startup": "___listenerOnStartup_run_handler_",
-          "Shutdown": "___listenerOnShutdown_run_handler_"
+          "Shutdown": "___listenerOnShutdown_run_handler_",
+          "OpenDocument": "___listenerOpenDocument_run_handler_",
+          "SelectionChanged": "___listenerSelectionChanged_run_handler_"
         }
       }
     },

@@ -8,6 +8,14 @@
 		<data>
 		C7cBa0tJgJDaq/fT3v890qcVG3s=
 		</data>
+		<key>Resources/CSContentKeyInspectorSection.nib</key>
+		<data>
+		y/517zhXRNjgx6RNHpbkv66sNPw=
+		</data>
+		<key>Resources/CSContentKeyInspectorSection2.nib</key>
+		<data>
+		KZ05kL0SRDll/8ejF75H42Pg1fU=
+		</data>
 		<key>Resources/CSContentKeyInspectorSectionImageLayer.nib</key>
 		<data>
 		ytGVTxf5TXUq3rHji96GCD5k4VQ=
@@ -18,19 +26,23 @@
 		</data>
 		<key>Resources/CSContentKeyInspectorSectionOverride.nib</key>
 		<data>
-		3+ukbpKQUoKj2UQPlmuGcV5eils=
+		+sPFrNBi+umpVSiapPvVMAgREFo=
 		</data>
 		<key>Resources/CSContentKeyInspectorSectionOverrides.nib</key>
 		<data>
-		RlOAdfLBINmmweybT+qSsTXvQq0=
+		qKCQ7nOPwBS2RS0hx1TLt28CNhs=
 		</data>
 		<key>Resources/CSContentKeyInspectorSectionTextLayer.nib</key>
 		<data>
-		Ceg8affNcDuR8BHFPWOWMFSEB3U=
+		Bar4s+zOUI+WcpZTSi5a1h+M4uo=
 		</data>
 		<key>Resources/CSContentKeyInspectorSectionTitle.nib</key>
 		<data>
-		jCrYGZCcxWzSVkTeDs1AS+34LEQ=
+		8cAAhr/YDVFMjLRmFpEt80pJrK4=
+		</data>
+		<key>Resources/CSInspectorItemWrapper.nib</key>
+		<data>
+		5ekljW5sado+xclKnIL+lpco4XQ=
 		</data>
 		<key>Resources/CSOnboardFinal.nib</key>
 		<data>
@@ -140,9 +152,13 @@
 		<data>
 		/tySUpnGsusufhyXd8EQJjhj9AI=
 		</data>
+		<key>Resources/GoogleService-Info.plist</key>
+		<data>
+		24fPhbIKsAEgbYTBU5uDlAIDGdg=
+		</data>
 		<key>Resources/Info.plist</key>
 		<data>
-		PeINO8bmYWf0WKqW+9NncTmV3Es=
+		0mo1/bgi4r1CJR/kLAso7/Z9/ss=
 		</data>
 		<key>Resources/SAMKeychain.bundle/en.lproj/SAMKeychain.strings</key>
 		<dict>
@@ -160,7 +176,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			u1eZdR9dt1FjAJt36VapXB3aP2gawvjj6OBr3vFON6o=
+			wdXa0vP9jHaTttmOG5+pWeWTk3kpC0IBceTckxtQJpE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -175,6 +191,20 @@
 			<key>hash2</key>
 			<data>
 			W70H/JFhtaerEAGBa3Rk19EmU+enPbGINTZ1kmcFZkg=
+			</data>
+		</dict>
+		<key>Resources/CSContentKeyInspectorSection.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+cLk2Hd0JdCNgddeSp+M5t6nfo08icejTIMSHfYcOxA=
+			</data>
+		</dict>
+		<key>Resources/CSContentKeyInspectorSection2.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FGUuaJ9wxj6U4dZ3NmdmAPrsWy81ve9mMsKv3y6QmWY=
 			</data>
 		</dict>
 		<key>Resources/CSContentKeyInspectorSectionImageLayer.nib</key>
@@ -195,28 +225,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9PXCB0u5asKfCx5KBOPfuKgQiNEiZy9nVVTfkw7INQQ=
+			FQ5whCLTRB+/JMPY8qHltS5KJlXgxJI6DBjkgD67JfM=
 			</data>
 		</dict>
 		<key>Resources/CSContentKeyInspectorSectionOverrides.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ck0OUKrT+ksrhj13PdHXVE5rQvB811M66HBAW6fT75o=
+			QV5+S996/lEl1XiwhKIH6h1XiG7bnKRnS8JlD6vH8n8=
 			</data>
 		</dict>
 		<key>Resources/CSContentKeyInspectorSectionTextLayer.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			r8ljCWC6MqvC+LzhurD2UJwZ4o3K8QIj4Qz2cBHKPAc=
+			ajxz+hqBvMtKVLMDg5BfCztqF/La1gQVcosTWr54vsI=
 			</data>
 		</dict>
 		<key>Resources/CSContentKeyInspectorSectionTitle.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			c25C/Sz1vohe0kOK5ZkTHKOHbySvHPCQK7bvrmtblHM=
+			ZjY3id952rkf4/FjE/cNOKSM2QwWRxf3iCrWFxAgTVs=
+			</data>
+		</dict>
+		<key>Resources/CSInspectorItemWrapper.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RJ1eXRSLnTe5FxS/3dtK/2a+gW+WZhboai/TAEdDg2c=
 			</data>
 		</dict>
 		<key>Resources/CSOnboardFinal.nib</key>
@@ -408,11 +445,18 @@
 			EH/2U0F1Xvuti7e/3h/kVpComOqi9/9xmdPp2UDH0ss=
 			</data>
 		</dict>
+		<key>Resources/GoogleService-Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rDVDDqY+zj1tgOjNG6d5lF/8AvJfV8anE/1yWDcmmLE=
+			</data>
+		</dict>
 		<key>Resources/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IaoDuO4nxlpUb//6GyrTjQcQPp+eI/SqulNqYdaZyx0=
+			LLunLdQKDPh3x6yTX3rPWRKnUfW7tLg8YQH/iw9dJQk=
 			</data>
 		</dict>
 		<key>Resources/SAMKeychain.bundle/en.lproj/SAMKeychain.strings</key>

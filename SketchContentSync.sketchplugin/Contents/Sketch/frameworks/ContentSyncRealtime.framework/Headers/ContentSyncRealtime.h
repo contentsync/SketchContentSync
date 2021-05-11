@@ -26,6 +26,9 @@ FOUNDATION_EXPORT const unsigned char ContentSyncRealtimeVersionString[];
 + (void)load;
 + (void)unload;
 
++ (void)onOpenDocument:(MSDocument*)doc;
++ (void)onSelectionChanged:(MSDocument*)doc;
+
 + (void)actionToggle:(MSDocument*)doc;
 + (void)actionPush:(MSDocument*)doc;
 + (void)actionPull:(MSDocument*)doc;
