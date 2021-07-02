@@ -1,6 +1,6 @@
 **Content collaboration for Sketch. Sync copy between Sketch designs and Google Spreadsheets and Microsoft 365 Exel.**
 
-# SketchContentSync 8.1.0
+# SketchContentSync 8.1.1
 
 Sync content to Google Spreadsheets and Microsoft 365 Excel directly from within Sketch.
 
@@ -41,6 +41,10 @@ With Sketch Runner, just go to the `install` command and search for `SketchConte
 Create a github issue or contact [support@contentsync.com](mailto:support@contentsync.com).
 
 ### Changelog
+
+#### 8.1.1
+
++ Fixes bug when using vector editing
 
 #### 8.1.0
 
