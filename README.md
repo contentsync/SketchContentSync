@@ -1,6 +1,6 @@
 **Content collaboration for Sketch. Sync copy between Sketch designs and Google Spreadsheets and Microsoft 365 Exel.**
 
-# SketchContentSync 8.1.1
+# SketchContentSync 8.3.0
 
 Sync content to Google Spreadsheets and Microsoft 365 Excel directly from within Sketch.
 
@@ -35,12 +35,44 @@ With Sketch Runner, just go to the `install` command and search for `SketchConte
 
 ![Sketch Runner screenshot](./docs/sketchrunner.png)
 
+#### ContentSync Scripting Support
+
+You can also use ContentSync within you Sketch scripts as of 8.3.0. The ContentSync API is accessed using `ContentSync.API()`.
+
+For example:
+```javascript
+// This example will print all Content Versions of the currently selected ContentSync project.
+ContentSync.API().versions((ok, data) => {
+  if(ok) data.map((v) => console.log(v))
+  if(!ok) console.log("Error: ", data);
+})
+```
+
+The shape of each version is:
+```json
+{
+    "name": "Version 1",
+    "syncable": true
+}
+```
+
+![ContentSync Sketch Scripting](./docs/cs_scripting.png)
+
+
 
 ## Support / Bugs / Feature Requests
 
 Create a github issue or contact [support@contentsync.com](mailto:support@contentsync.com).
 
 ### Changelog
+
+#### 8.3.0
+
++ Add [ContentSync scripting API](#ContentSync-Scripting-Support).
+
+#### 8.2.0
+
++ Upgrade to universal binary for Apple Silicon Support
 
 #### 8.1.1
 
