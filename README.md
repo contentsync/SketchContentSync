@@ -1,6 +1,6 @@
 **Content collaboration for Sketch. Sync copy between Sketch designs and Google Spreadsheets and Microsoft 365 Exel.**
 
-# SketchContentSync 8.3.1
+# SketchContentSync 8.4.x ALPHA
 
 Sync content to Google Spreadsheets and Microsoft 365 Excel directly from within Sketch.
 
@@ -69,6 +69,11 @@ The shape of each version is:
 Create a github issue or contact [support@contentsync.com](mailto:support@contentsync.com).
 
 ### Changelog
+
+#### 8.4.0-alpha
+
+- Fixes parsing symbols instances with remote symbol masters (even is library isnt found)
+- Improves pull pipeline to handle larger syncs, work in background, and show progress
 
 #### 8.3.1
 
