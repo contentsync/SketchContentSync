@@ -70,6 +70,12 @@ Create a github issue or contact [support@contentsync.com](mailto:support@conten
 
 ### Changelog
 
+#### 8.4.1-alpha
+
+- Fixes bug causing hanging when searching for a symbol name that doesnt exist
+- Fixes searching libraries to ignore disabled libraries
+- Improves push pipeline to handler larger syncs, work in the background, and show progress
+
 #### 8.4.0-alpha
 
 - Fixes parsing symbols instances with remote symbol masters (even is library isnt found)
