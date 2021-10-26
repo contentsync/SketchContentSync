@@ -70,6 +70,12 @@ Create a github issue or contact [support@contentsync.com](mailto:support@conten
 
 ### Changelog
 
+#### 8.4.2-alpha
+
+- Fixes imports of library symbol not already used in document
+- Fixes issue where sometimes push doesnt include all data
+- Fixes issue when trying to load a library that is missing
+
 #### 8.4.1-alpha
 
 - Fixes bug causing hanging when searching for a symbol name that doesnt exist
