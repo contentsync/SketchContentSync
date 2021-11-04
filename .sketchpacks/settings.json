@@ -1,0 +1,5 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_path": "SketchContentSync.sketchplugin/Contents/Sketch/manifest.json",
+  "appcast_path": "https://cast.appcastify.com/contentsync/contentsync6.xml"
+}
