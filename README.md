@@ -1,6 +1,6 @@
 **Content collaboration for Sketch. Sync copy between Sketch designs and Google Spreadsheets and Microsoft 365 Exel.**
 
-# SketchContentSync 8.6.2
+# SketchContentSync 8.6.3
 
 Sync content to Google Spreadsheets and Microsoft 365 Excel directly from within Sketch.
 
@@ -69,6 +69,10 @@ The shape of each version is:
 Create a github issue or contact [support@contentsync.com](mailto:support@contentsync.com).
 
 ### Changelog
+
+#### 8.6.3
+
+- Fixes issue with text overrides conflicting with other override types in Sketch 94.1
 
 #### 8.6.2
 
