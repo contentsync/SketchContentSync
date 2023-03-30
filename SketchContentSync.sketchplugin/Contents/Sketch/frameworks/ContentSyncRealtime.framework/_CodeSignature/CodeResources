@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Assets.car</key>
 		<data>
-		vl3KBYEy/gYDl9lcXxhAA9YIhJA=
+		xqbruCD7q7lM5RWNVyDAwPaTtu0=
 		</data>
 		<key>Resources/CSContentKeyInspectorSection.nib</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Resources/CSContentKeyInspectorSectionOverrides.nib</key>
 		<data>
-		ovQxUnsZkYH0id1pp0mIUVuQk/s=
+		Fl9zFTA/1DR1r27AxSuZg+1fbvs=
 		</data>
 		<key>Resources/CSContentKeyInspectorSectionTextLayer.nib</key>
 		<data>
-		97foAo0/DFw6h6bQIvNRWtSOpj8=
+		hAlDpJNZbkDMuh5S66OwENiDHzo=
 		</data>
 		<key>Resources/CSContentKeyInspectorSectionTitle.nib</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Resources/CSOnboardFinal.nib</key>
 		<data>
-		YrGIfF1bDOWhhDfEQAy82gMrP5g=
+		ucvBnSatwHTH3fVqN8UUtNZBuiU=
 		</data>
 		<key>Resources/CSOnboardLayerList.nib</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Resources/CSOnboardLayerPane.nib</key>
 		<data>
-		3+8mhm+Jp0LOJKDne59GblzscOk=
+		YHDsASD8VQvCYSbAIZjPBnvPTNk=
 		</data>
 		<key>Resources/CSOnboardSelectProject.nib</key>
 		<data>
@@ -62,19 +62,19 @@
 		</data>
 		<key>Resources/CSOnboardVersions.nib</key>
 		<data>
-		QOklvCbVrYK0QLDjEALW0kYd6Fk=
+		mxzbEUFLbD0lGsjhyJ06hAOlv80=
 		</data>
 		<key>Resources/CSOnboardWelcome.nib</key>
 		<data>
-		lxE56d5JAkoGd4EGy+TidBA2GjQ=
+		k7FCNN7H9v0RDfc3l7zyGCIXjeI=
 		</data>
 		<key>Resources/CSPopupAccount.nib</key>
 		<data>
-		dRgHz5nYBy5zkd7hJbZn1YYlkHg=
+		cOY99OLeuWXto8ZFjnrfllh1FVs=
 		</data>
 		<key>Resources/CSPopupFeedback.nib</key>
 		<data>
-		yXOaQ8XL8uywRhitTPCTCBBRn88=
+		YTZT48Wwnjl+ZP3rVjxIvY0z9oY=
 		</data>
 		<key>Resources/CSPopupLogin.nib</key>
 		<data>
@@ -102,11 +102,11 @@
 		</data>
 		<key>Resources/CSTopbarPaneTabProjectNewView.nib</key>
 		<data>
-		oMA9uVg0OMJyv3QjNOWLMlCY5f4=
+		4XqWtx5MaojaKXHqqr9M6DzKpKo=
 		</data>
 		<key>Resources/CSTopbarPaneTabProjectView.nib</key>
 		<data>
-		RcDUOqlyDstEPvCS4sebWcjPQnE=
+		Xedzje6qhme/q0HtTHnFisHT0BM=
 		</data>
 		<key>Resources/CSTopbarPaneTabSyncActionRunning.nib</key>
 		<data>
@@ -114,11 +114,11 @@
 		</data>
 		<key>Resources/CSTopbarPaneTabSyncView.nib</key>
 		<data>
-		Idfis7JRJsiKV/N4Do6j3NcmmGU=
+		FFLFRcM/F+rtlTVLPu20UKVV3j0=
 		</data>
 		<key>Resources/CSTopbarPaneTabVersionNewView.nib</key>
 		<data>
-		781JiUd7e2uNgRt2bYMf8y0zdH8=
+		pASAnByVb4OwZvCYMnk+0sh/Z3w=
 		</data>
 		<key>Resources/CSTopbarPaneTabs.nib</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>Resources/Info.plist</key>
 		<data>
-		QznGX3wiGta6/arVe4vh+cf+uPw=
+		u673UOaTg+HWm2amxL2CZg+v2h0=
 		</data>
 		<key>Resources/SAMKeychain.bundle/en.lproj/SAMKeychain.strings</key>
 		<dict>
@@ -190,7 +190,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oMGYV/1YbxQmjfqq+tIHXGrODX4U184ud+oM5yvkfRQ=
+			5w+JiODiGjCDOqpGaSrqJ6OQfaeAFT5D8yva0BfKdtg=
 			</data>
 		</dict>
 		<key>Resources/CSContentKeyInspectorSection.nib</key>
@@ -232,14 +232,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Rl4S6kLQ0BhX5vCE8ySnws7huQ37jouPQTOU7gyPlec=
+			nWiu6EC8GcVeL7NW1wSzEdiPGkFp3q7tjYGPY0AgbhU=
 			</data>
 		</dict>
 		<key>Resources/CSContentKeyInspectorSectionTextLayer.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xCzEt24DBtl6j/8VCK0pWhb8WrWM+aMROORYLnk8Rso=
+			+sCnodVFkgns77k1Kw44qXrloT6P9uJAV/JtU1Ions4=
 			</data>
 		</dict>
 		<key>Resources/CSContentKeyInspectorSectionTitle.nib</key>
@@ -260,7 +260,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hUFGrVs65ChPkBLZDnchGCS+kbMu9BDo+JkKLdrnlZA=
+			urw8jlMWqr02FcZ3zOS21lvcauIx0LKuITgB3uxmT9w=
 			</data>
 		</dict>
 		<key>Resources/CSOnboardLayerList.nib</key>
@@ -274,7 +274,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LearWB8nyF0s4+4RznyVMYbgFfw9vuVKDJGoF2Zqoio=
+			iPsl5au7HF7Z416v9y+i7qKsy8mShyiLn/gNn6LY7zU=
 			</data>
 		</dict>
 		<key>Resources/CSOnboardSelectProject.nib</key>
@@ -288,28 +288,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yET1wbZyXAqPAKCD+1yeEeAmiumpPMN0tT3vZ2kjxzQ=
+			ydkFgVOGo9Xee3eyYvRjtjgQ67xqhwc8bJNJPizOPSk=
 			</data>
 		</dict>
 		<key>Resources/CSOnboardWelcome.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yUQcac07mYIo9jIpSkpRkbEDnbptb2Xyk68WyWhH138=
+			uTMnPdGxGlnUgViOAs2FoCuLqobLtY1WFLyjw+xPw5Y=
 			</data>
 		</dict>
 		<key>Resources/CSPopupAccount.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BfwVSCxwZRlesZ8dw3gWVM/vtfqfokDmoZWe7OOllds=
+			VkKnUZ1Q8q1ERFg0HHbjuSI89QEybW3LCL6rYJmRAXo=
 			</data>
 		</dict>
 		<key>Resources/CSPopupFeedback.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HHn4c5sQ0+UDC7gL8JriVrrBwWGUDbR1PLweGhtU1ps=
+			bKxJc8ibfgaFadanQ8T/Zteb8JiCigopE3CvjQGvdpQ=
 			</data>
 		</dict>
 		<key>Resources/CSPopupLogin.nib</key>
@@ -358,14 +358,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2SGu7INrntE84L5NFEjTmg2/E/PYJ78bYdg/ITygrCw=
+			N4/k1BsKsAhyqeyCrNNNmfsDYln6CQLE8qEz5vXjapc=
 			</data>
 		</dict>
 		<key>Resources/CSTopbarPaneTabProjectView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			z5+OQ2i6CiMmIoBiCV6XiM5nhvk62fEy4dkiaBnfifA=
+			rYmbbB1H7Cyqpny9eln3H2fMrnit6g6s824U4WkyILo=
 			</data>
 		</dict>
 		<key>Resources/CSTopbarPaneTabSyncActionRunning.nib</key>
@@ -379,14 +379,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IPxJdRdLPWbudqOmKq2kPYHN58aC1wzHN6jLmpzBXgA=
+			eYYlYB3cPTEy8b6BAUpPFjIO5DOaQln3WwK3bCzgU4c=
 			</data>
 		</dict>
 		<key>Resources/CSTopbarPaneTabVersionNewView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NONk2eGvQ6vUZSv1Up8h0GnONQ/H8dtGR0mpd50UeJE=
+			AL4xE6gA8NHcrAjBaZbDUVmSP+ph4Jc5G1JhjD3u7pg=
 			</data>
 		</dict>
 		<key>Resources/CSTopbarPaneTabs.nib</key>
@@ -456,7 +456,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tebJEx1PDEnkaRxIyj/QDXbgC3tkYVEs44gGZQRAz5I=
+			A9wamvJJAqRRDnlhzdg17eQiMuyLmpVw+iPpJdwyt28=
 			</data>
 		</dict>
 		<key>Resources/SAMKeychain.bundle/en.lproj/SAMKeychain.strings</key>
